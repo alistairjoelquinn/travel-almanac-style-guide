@@ -1,7 +1,7 @@
-import { createTheme } from '@material-ui/core/styles';
+import { ThemeOptions } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 
-export const themeLight = createTheme({
+export const themeLight: ThemeOptions = {
     palette: {
         primary: {
             main: '#556cd6',
@@ -15,23 +15,12 @@ export const themeLight = createTheme({
         background: {
             default: '#fff',
         },
+        type: 'light',
     },
-});
+};
 
-export const themeDark = createTheme({
+export const themeDark: ThemeOptions = {
     palette: {
-        primary: {
-            main: '#556cd6',
-        },
-        secondary: {
-            main: '#19857b',
-        },
-        error: {
-            main: red.A400,
-        },
-        background: {
-            default: '#fff',
-        },
         type: 'dark',
     },
-});
+};

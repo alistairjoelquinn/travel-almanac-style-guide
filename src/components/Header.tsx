@@ -7,7 +7,6 @@ import { Action } from './context/theme/reducer';
 const Header = () => {
     const { currentTheme } = useThemeState();
     const dispatchTheme: Dispatch<Action> = useThemeDispatch();
-    console.log('dispatchTheme: ', dispatchTheme);
 
     return (
         <AppBar position="static" square>

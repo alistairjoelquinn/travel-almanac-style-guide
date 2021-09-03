@@ -3,7 +3,6 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
 import { themeLight } from '@/components/styles/theme';
-import { ColorThemeProvider } from '@/components/context/theme/context';
 
 export default class MyDocument extends Document {
     render() {
@@ -18,10 +17,8 @@ export default class MyDocument extends Document {
                     />
                 </Head>
                 <body>
-                    <ColorThemeProvider>
-                        <Main />
-                        <NextScript />
-                    </ColorThemeProvider>
+                    <Main />
+                    <NextScript />
                 </body>
             </Html>
         );
