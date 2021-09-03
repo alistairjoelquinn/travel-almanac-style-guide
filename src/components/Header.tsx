@@ -1,8 +1,10 @@
-import { AppBar } from '@material-ui/core';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
 const Header = () => (
     <AppBar position="static" square>
-        <h1>The Travel Almanac Style Guide</h1>
+        <Toolbar>
+            <Typography variant="h5">The Travel Almanac Style Guide</Typography>
+        </Toolbar>
     </AppBar>
 );
 
