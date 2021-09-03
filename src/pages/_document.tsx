@@ -2,14 +2,11 @@ import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
-import { themeLight } from '@/components/styles/theme';
-
 export default class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
                 <Head>
-                    <meta name="theme-color" content={themeLight.palette.primary.main} />
                     <link
                         rel="preload"
                         as="style"
