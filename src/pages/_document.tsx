@@ -2,14 +2,15 @@ import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
-import theme from '@/components/styles/theme';
+import { themeLight } from '@/components/styles/theme';
+import { ColorThemeProvider } from '@/components/context/theme/context';
 
 export default class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
                 <Head>
-                    <meta name="theme-color" content={theme.palette.primary.main} />
+                    <meta name="theme-color" content={themeLight.palette.primary.main} />
                     <link
                         rel="preload"
                         as="style"
@@ -17,8 +18,10 @@ export default class MyDocument extends Document {
                     />
                 </Head>
                 <body>
-                    <Main />
-                    <NextScript />
+                    <ColorThemeProvider>
+                        <Main />
+                        <NextScript />
+                    </ColorThemeProvider>
                 </body>
             </Html>
         );
