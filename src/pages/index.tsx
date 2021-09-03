@@ -7,9 +7,7 @@ const Home = () => (
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main>
-            <div>Nextjs / Typescript template body</div>
-        </main>
+        <main />
     </div>
 );
 

@@ -1,10 +1,11 @@
 import Header from '@/components/Header';
+import { Paper } from '@material-ui/core';
 
 const Page: React.FC = ({ children }) => (
-    <div>
+    <Paper square>
         <Header />
         {children}
-    </div>
+    </Paper>
 );
 
 export default Page;

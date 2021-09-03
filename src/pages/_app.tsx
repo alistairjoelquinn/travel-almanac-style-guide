@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 
 import Page from '@/components/Page';
-import theme from '../components/styles/theme';
+import theme from '@/components/styles/theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
     useEffect(() => {
