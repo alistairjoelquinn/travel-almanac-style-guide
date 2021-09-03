@@ -6,9 +6,9 @@ import { Action } from './context/theme/reducer';
 
 const useStyles = makeStyles({
     headerLinkStyles: {
-        flex: 1,
-        textDecoration: 'none',
-        // color: '#545454',
+        display: 'flex',
+        justifyContent: 'space-between',
+        color: '#d6d6d6',
     },
     iconLight: {
         color: '#d6d6d6',
@@ -25,7 +25,7 @@ const Header = () => {
 
     return (
         <AppBar position="static" square>
-            <Toolbar>
+            <Toolbar className={classes.headerLinkStyles}>
                 <Typography variant="h5">The Travel Almanac Style Guide</Typography>
                 <IconButton
                     className={currentTheme === 'dark' ? classes.iconLight : classes.iconDark}
