@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Dates",
+        "value": [
+            "The exhibition begins 25th November 2032 (don’t use on)",
+            "’90s or 1990s (note direction of the apostrophe) or nineties.",
+            "mid-2000s / mid-‘70s",
+            "2015-16 is acceptable"
+        ]
+    },
+    {
+        "name": "Time",
+        "value": [
+            "3 p.m.",
+            "2-4 a.m.",
+            "10 p.m. to 6 a.m."
+        ]
+    },
+    {
+        "name": "Age Numerals",
+        "value": [
+            "She was 6 or 7 years old",
+            "I was a 6-year-old",
+            "A man in his 50s"
+        ]
+    },
+    {
+        "name": "Currencies",
+        "value": [
+            "dollars or $",
+            "euro",
+            "pounds",
+            "yen"
+        ]
+    },
+    {
+        "name": "Ranges",
+        "value": [
+            "Between 15 and 20 (not between 15 to 20 or between 15-20)",
+            "$12 million to $14 million",
+            "12-15% or 12% to 15% (not 12-15 percent)"
+        ]
+    }
+]
