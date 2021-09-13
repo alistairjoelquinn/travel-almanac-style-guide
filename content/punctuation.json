@@ -1,16 +1,58 @@
 [
-    "a or an before H?: Use “an” before a silent H as with an heir, an hour, an honest politician, an honorary consul. Use “a” before an aspirated H as with a hero, a hotel, a historian.",
-    "Etcetera: write as etc without without It should be written as “etc..” when at the end of a sentence.",
-    "e.g. and i.e.: use this form and always follow with a comma",
-    "Oxford comma: generally, we don’t like oxford commas unless essential for clarity.",
-    "Semi-colon for lists: Use at you your discretion",
-    "Quoting Speech: All speech should be in double quotes",
-    "Quoting thoughts in interviews: single quotes",
-    "Quotes and full stops: full stop inside and outside when quote at the end of the sentence and a full quote.",
-    "A word in another language: use italics if not commonly used.",
-    "Dash: Use an EM dash whether for parentheses or to separate groups of words. Don’t use a hyphen.",
-    "If someone trails off while speaking use “...”",
-    "Round brackets: used as parentheses only when the sentence doesn’t make grammatical sense without.",
-    "Square brackets: used to inset missing words",
-    "Prefixes and suffixes: See commonly used words"
+    {
+        "title": "a or an before H?",
+        "value": "Use “an” before a silent H as with an heir, an hour, an honest politician, an honorary consul. Use “a” before an aspirated H as with a hero, a hotel, a historian."
+    },
+    {
+        "title": "Etcetera",
+        "value": "Write as etc without without It should be written as “etc..” when at the end of a sentence."
+    },
+    {
+        "title": "e.g. and i.e.",
+        "value" : "Use this form and always follow with a comma."
+    },
+    {
+        "title": "Oxford comma",
+        "value": "Generally, we don’t like oxford commas unless essential for clarity."
+    },
+    {
+        "title": "Semi-colon for lists",
+        "value": "Use at your discretion."
+    },
+    {
+        "title": "Quoting Speech",
+        "value": "All speech should be in double quotes."
+    },
+    {
+        "title": "Quoting thoughts in interviews",
+        "value": "single quotes"
+    },
+    {
+        "title": "Quotes and full stops",
+        "value": "Full stop inside and outside when quote at the end of the sentence and a full quote."
+    },
+    {
+        "title": "A word in another language",
+        "value": "Use italics if not commonly used."
+    },
+    {
+        "title": "Dash",
+        "value": "Use an EM dash whether for parentheses or to separate groups of words. Don’t use a hyphen."
+    },
+    {
+        "title": "Ellipsis",
+        "value": "If someone trails off while speaking use “...”"
+    },
+    {
+        "title": "Round brackets",
+        "value": "Used as parentheses only when the sentence doesn’t make grammatical sense without."
+    },
+    {
+        "title": "Square brackets",
+        "value": "Used to inset missing words."
+    },
+    {
+        "title": "Prefixes and suffixes",
+        "value": "See commonly used words"
+    }
 ]
