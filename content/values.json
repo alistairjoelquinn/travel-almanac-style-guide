@@ -13,7 +13,8 @@
         "value": [
             "3 p.m.",
             "2-4 a.m.",
-            "10 p.m. to 6 a.m."
+            "10 p.m. to 6 a.m.",
+            "24/7"
         ]
     },
     {
@@ -39,6 +40,13 @@
             "Between 15 and 20 (not between 15 to 20 or between 15-20)",
             "$12 million to $14 million",
             "12-15% or 12% to 15% (not 12-15 percent)"
+        ]
+    },
+    {
+        "title": "Measurements",
+        "value": [
+            "Always use a space before m, km, ft, etc.",
+            "50/50"
         ]
     }
 ]
