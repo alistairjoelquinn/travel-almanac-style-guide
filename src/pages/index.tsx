@@ -3,7 +3,7 @@ import Head from 'next/head';
 const Home = () => (
     <div>
         <Head>
-            <title>Alistair Quinn Next Typescript Template</title>
+            <title>Travel Almanac Style Guide</title>
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
