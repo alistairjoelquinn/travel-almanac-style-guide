@@ -13,12 +13,16 @@ const useStyles = makeStyles({
     },
     headerLinkStyles: {
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         color: '#d6d6d6',
         backgroundColor: '#F0F0F0',
     },
     headerText: {
         color: '#000000',
+        borderTop: '1px solid black',
+        borderBottom: '1px solid black',
+        paddingTop: '0.3rem',
+        fontSize: '2rem',
     },
     iconLight: {
         color: '#d6d6d6',
@@ -29,22 +33,22 @@ const useStyles = makeStyles({
 });
 
 const Header = () => {
-    const { currentTheme } = useThemeState();
-    const dispatchTheme: Dispatch<Action> = useThemeDispatch();
+    // const { currentTheme } = useThemeState();
+    // const dispatchTheme: Dispatch<Action> = useThemeDispatch();
     const classes = useStyles();
 
     return (
         <AppBar className={classes.appBar} position="static" square>
             <Toolbar className={classes.headerLinkStyles}>
                 <Typography className={classes.headerText} variant="h5">
-                    The Travel Almanac Style Guide
+                    THE TRAVEL ALMANAC STYLE GUIDE
                 </Typography>
-                <IconButton
+                {/* <IconButton
                     className={currentTheme === 'dark' ? classes.iconLight : classes.iconDark}
                     onClick={() => dispatchTheme({ type: 'TOGGLE_THEME' })}
                 >
                     {currentTheme === 'dark' ? <Brightness7 /> : <Brightness4 />}
-                </IconButton>
+                </IconButton> */}
             </Toolbar>
         </AppBar>
     );

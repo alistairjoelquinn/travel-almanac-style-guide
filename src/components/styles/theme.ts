@@ -3,12 +3,22 @@ import { red } from '@material-ui/core/colors';
 
 const themeBase: ThemeOptions = {
     typography: {
-        fontFamily: 'Minion, Arial',
+        fontFamily: 'MinionBold, Arial',
     },
     overrides: {
         MuiCssBaseline: {
             '@global': {
                 '@font-face': [
+                    {
+                        fontFamily: 'MinionBold',
+                        fontStyle: 'normal',
+                        fontDisplay: 'swap',
+                        fontWeight: 400,
+                        src: `
+                            local('MinionBold'),
+                            url('/minion-pro-bold.ttf') format('truetype')
+                        `,
+                    },
                     {
                         fontFamily: 'Minion',
                         fontStyle: 'normal',
