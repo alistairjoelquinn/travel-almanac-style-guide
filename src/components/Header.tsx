@@ -27,7 +27,7 @@ const NavStyles = styled.nav`
     justify-content: space-around;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-    a {
+    span {
         width: 100%;
         line-height: 2rem;
         text-align: center;
@@ -35,25 +35,42 @@ const NavStyles = styled.nav`
         color: black;
         padding-top: 0.3rem;
         text-decoration: none;
-        &:visited {
-            color: black;
+        cursor: pointer;
+        .underline {
+            border-bottom: 1px solid black;
         }
     }
 `;
 
-const Header = () => (
-    <>
-        <HeaderStyles>
-            <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
-        </HeaderStyles>
-        <NavStyles className="page-nav">
-            <Link href="/">Common Words</Link>
-            <Link href="/punctuation">Punctuation</Link>
-            <Link href="/dates-numbers">Dates & Numbers</Link>
-            <Link href="/best-practise">Best Practise</Link>
-            <Link href="/tone-of-voice">Tone of Voice</Link>
-        </NavStyles>
-    </>
-);
+const Header = () => {
+    const clickHander = (e: React.MouseEvent<HTMLButtonElement>) => {
+        console.log('e.target: ', e.target);
+    };
+
+    return (
+        <>
+            <HeaderStyles>
+                <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
+            </HeaderStyles>
+            <NavStyles className="page-nav">
+                <Link href="/" passHref>
+                    <span className="underline">Common Words</span>
+                </Link>
+                <Link href="/punctuation" passHref>
+                    <span>Punctuation</span>
+                </Link>
+                <Link href="/dates-numbers" passHref>
+                    <span>Dates & Numbers</span>
+                </Link>
+                <Link href="/best-practise" passHref>
+                    <span>Best Practise</span>
+                </Link>
+                <Link href="/tone-of-voice" passHref>
+                    <span>Tone of Voice</span>
+                </Link>
+            </NavStyles>
+        </>
+    );
+};
 
 export default Header;
