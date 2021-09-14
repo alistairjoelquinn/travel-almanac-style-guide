@@ -35,19 +35,26 @@ const NavStyles = styled.nav`
     }
 `;
 
-const Header = () => (
-    <>
-        <HeaderStyles>
-            <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
-        </HeaderStyles>
-        <NavStyles className="page-nav">
-            <span>Common Words</span>
-            <span>Punctuation</span>
-            <span>Dates & Numbers</span>
-            <span>Best Practise</span>
-            <span>Tone of Voice</span>
-        </NavStyles>
-    </>
-);
+const Header = () => {
+    const clickHander = (e: React.MouseEvent<HTMLButtonElement>) => {
+        console.log('e.currentTarget: ', e.currentTarget);
+        console.log('e.target: ', e.target);
+    };
+
+    return (
+        <>
+            <HeaderStyles>
+                <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
+            </HeaderStyles>
+            <NavStyles className="page-nav" onClick={clickHander}>
+                <span className="/">Common Words</span>
+                <span className="/punctuation">Punctuation</span>
+                <span className="/dates-numbers">Dates & Numbers</span>
+                <span className="/best-practise">Best Practise</span>
+                <span className="/tone-of-voice">Tone of Voice</span>
+            </NavStyles>
+        </>
+    );
+};
 
 export default Header;
