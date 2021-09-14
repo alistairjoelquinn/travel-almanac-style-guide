@@ -1,24 +1,17 @@
-import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 
+import GlobalStyles from '@/components/styles/GlobalStyles';
+import Typography from '@/components/styles/Typography';
 import Page from '@/components/Page';
-import { ColorThemeProvider } from '@/components/context/theme/context';
 
-const App = ({ Component, pageProps }: AppProps) => {
-    useEffect(() => {
-        const jssStyles = document.querySelector('#jss-server-side');
-        if (jssStyles) {
-            jssStyles.parentElement?.removeChild(jssStyles);
-        }
-    }, []);
-
-    return (
-        <ColorThemeProvider>
-            <Page>
-                <Component {...pageProps} />
-            </Page>
-        </ColorThemeProvider>
-    );
-};
+const App = ({ Component, pageProps }: AppProps) => (
+    <>
+        <GlobalStyles />
+        <Typography />
+        <Page>
+            <Component {...pageProps} />
+        </Page>
+    </>
+);
 
 export default App;
