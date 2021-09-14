@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const HeaderStyles = styled.nav`
     height: 22vh;
@@ -11,7 +12,7 @@ const HeaderStyles = styled.nav`
     h5 {
         font-family: MinionBold;
         height: 5rem;
-        color: #000000;
+        color: black;
         border-top: 2px solid black;
         border-bottom: 2px solid black;
         padding-top: 0.3rem;
@@ -26,35 +27,33 @@ const NavStyles = styled.nav`
     justify-content: space-around;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-    span {
+    a {
         width: 100%;
         line-height: 2rem;
         text-align: center;
         font-family: MinionBold;
+        color: black;
         padding-top: 0.3rem;
+        text-decoration: none;
+        &:visited {
+            color: black;
+        }
     }
 `;
 
-const Header = () => {
-    const clickHander = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log('e.currentTarget: ', e.currentTarget);
-        console.log('e.target: ', e.target);
-    };
-
-    return (
-        <>
-            <HeaderStyles>
-                <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
-            </HeaderStyles>
-            <NavStyles className="page-nav" onClick={clickHander}>
-                <span className="/">Common Words</span>
-                <span className="/punctuation">Punctuation</span>
-                <span className="/dates-numbers">Dates & Numbers</span>
-                <span className="/best-practise">Best Practise</span>
-                <span className="/tone-of-voice">Tone of Voice</span>
-            </NavStyles>
-        </>
-    );
-};
+const Header = () => (
+    <>
+        <HeaderStyles>
+            <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
+        </HeaderStyles>
+        <NavStyles className="page-nav">
+            <Link href="/">Common Words</Link>
+            <Link href="/punctuation">Punctuation</Link>
+            <Link href="/dates-numbers">Dates & Numbers</Link>
+            <Link href="/best-practise">Best Practise</Link>
+            <Link href="/tone-of-voice">Tone of Voice</Link>
+        </NavStyles>
+    </>
+);
 
 export default Header;
