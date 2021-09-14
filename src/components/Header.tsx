@@ -1,8 +1,4 @@
-import { AppBar, IconButton, Toolbar, Typography, makeStyles } from '@material-ui/core';
-import { Brightness7, Brightness4 } from '@material-ui/icons';
-import { Dispatch } from 'react';
-import { useThemeDispatch, useThemeState } from './context/theme/context';
-import { Action } from './context/theme/reducer';
+import { AppBar, Toolbar, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
     appBar: {
@@ -19,8 +15,8 @@ const useStyles = makeStyles({
     },
     headerText: {
         color: '#000000',
-        borderTop: '1px solid black',
-        borderBottom: '1px solid black',
+        borderTop: '2px solid black',
+        borderBottom: '2px solid black',
         paddingTop: '0.3rem',
         fontSize: '2rem',
     },
@@ -33,8 +29,6 @@ const useStyles = makeStyles({
 });
 
 const Header = () => {
-    // const { currentTheme } = useThemeState();
-    // const dispatchTheme: Dispatch<Action> = useThemeDispatch();
     const classes = useStyles();
 
     return (
@@ -43,12 +37,6 @@ const Header = () => {
                 <Typography className={classes.headerText} variant="h5">
                     THE TRAVEL ALMANAC STYLE GUIDE
                 </Typography>
-                {/* <IconButton
-                    className={currentTheme === 'dark' ? classes.iconLight : classes.iconDark}
-                    onClick={() => dispatchTheme({ type: 'TOGGLE_THEME' })}
-                >
-                    {currentTheme === 'dark' ? <Brightness7 /> : <Brightness4 />}
-                </IconButton> */}
             </Toolbar>
         </AppBar>
     );
