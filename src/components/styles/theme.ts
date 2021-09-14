@@ -1,7 +1,7 @@
 import { ThemeOptions } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 
-export const themeLight: ThemeOptions = {
+const themeBase: ThemeOptions = {
     typography: {
         fontFamily: 'Minion, Arial',
     },
@@ -36,11 +36,18 @@ export const themeLight: ThemeOptions = {
         background: {
             default: '#fff',
         },
+    },
+};
+
+export const themeLight: ThemeOptions = {
+    ...themeBase,
+    palette: {
         type: 'light',
     },
 };
 
 export const themeDark: ThemeOptions = {
+    ...themeBase,
     palette: {
         type: 'dark',
     },
