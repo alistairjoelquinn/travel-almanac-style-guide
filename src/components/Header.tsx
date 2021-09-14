@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const HeaderStyles = styled.nav`
-    height: 25vh;
+    height: 22vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,35 +17,37 @@ const HeaderStyles = styled.nav`
         padding-top: 0.3rem;
         font-size: 4rem;
     }
-    .page-nav {
-        position: absolute;
-        bottom: 0;
-        width: 95%;
-        display: flex;
-        justify-content: space-around;
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;
-        span {
-            width: 100%;
-            line-height: 2rem;
-            text-align: center;
-            font-family: MinionBold;
-            padding-top: 0.3rem;
-        }
+`;
+
+const NavStyles = styled.nav`
+    width: 95%;
+    margin-left: 2.5%;
+    display: flex;
+    justify-content: space-around;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    span {
+        width: 100%;
+        line-height: 2rem;
+        text-align: center;
+        font-family: MinionBold;
+        padding-top: 0.3rem;
     }
 `;
 
 const Header = () => (
-    <HeaderStyles>
-        <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
-        <div className="page-nav">
+    <>
+        <HeaderStyles>
+            <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
+        </HeaderStyles>
+        <NavStyles className="page-nav">
             <span>Common Words</span>
             <span>Punctuation</span>
             <span>Dates & Numbers</span>
             <span>Best Practise</span>
             <span>Tone of Voice</span>
-        </div>
-    </HeaderStyles>
+        </NavStyles>
+    </>
 );
 
 export default Header;
