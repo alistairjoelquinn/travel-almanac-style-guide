@@ -41,7 +41,7 @@ const NavStyles = styled.nav`
             outline: none;
             border: none;
             cursor: pointer;
-            height: 1.5rem;
+            height: 1.8rem;
             background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 2px no-repeat;
             transition: 0.5s;
             &.underline {
