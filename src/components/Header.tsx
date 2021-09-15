@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const HeaderStyles = styled.nav`
     height: 22vh;
@@ -50,53 +51,47 @@ const NavStyles = styled.nav`
     }
 `;
 
+const paths = [
+    {
+        name: 'Common Words',
+        path: '/',
+    },
+    {
+        name: 'Punctuation',
+        path: '/punctuation',
+    },
+    {
+        name: 'Dates & Numbers',
+        path: '/dates-numbers',
+    },
+    {
+        name: 'Best Practise',
+        path: '/best-practise',
+    },
+    {
+        name: 'Tone of Voice',
+        path: '/tone-of-voice',
+    },
+];
+
 const Header = () => {
-    const clickHander = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log('e.target.id: ', (e.target as HTMLButtonElement).id);
-        console.log('window.location: ', window.location.pathname);
-    };
+    const router = useRouter();
 
     return (
         <>
             <HeaderStyles>
                 <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
             </HeaderStyles>
-            <NavStyles className="page-nav" onClick={clickHander}>
-                <div>
-                    <Link href="/" passHref>
-                        <button type="button" id="/" className="underline">
-                            Common Words
-                        </button>
-                    </Link>
-                </div>
-                <div>
-                    <Link href="/punctuation" passHref>
-                        <button type="button" id="/punctuation">
-                            Punctuation
-                        </button>
-                    </Link>
-                </div>
-                <div>
-                    <Link href="/dates-numbers" passHref>
-                        <button type="button" id="/dates-numbers">
-                            Dates & Numbers
-                        </button>
-                    </Link>
-                </div>
-                <div>
-                    <Link href="/best-practise" passHref>
-                        <button type="button" id="/best-practise">
-                            Best Practise
-                        </button>
-                    </Link>
-                </div>
-                <div>
-                    <Link href="/tone-of-voice" passHref>
-                        <button type="button" id="/tone-of-voice">
-                            Tone of Voice
-                        </button>
-                    </Link>
-                </div>
+            <NavStyles className="page-nav">
+                {paths.map((path) => (
+                    <div key={path.name}>
+                        <Link href={path.path} passHref>
+                            <button type="button" className={router.pathname === path.path ? 'underline' : ''}>
+                                {path.name}
+                            </button>
+                        </Link>
+                    </div>
+                ))}
             </NavStyles>
         </>
     );
