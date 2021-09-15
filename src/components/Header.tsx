@@ -36,11 +36,15 @@ const NavStyles = styled.nav`
         display: flex;
         justify-content: center;
         align-items: center;
-        span {
+        button {
+            outline: none;
+            border: none;
             cursor: pointer;
             height: 1.5rem;
+            background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 2px no-repeat;
+            transition: 0.5s;
             &.underline {
-                border-bottom: 2px solid black;
+                --d: 100%;
             }
         }
     }
@@ -48,7 +52,8 @@ const NavStyles = styled.nav`
 
 const Header = () => {
     const clickHander = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log('e.target: ', e.target);
+        console.log('e.target.id: ', (e.target as HTMLButtonElement).id);
+        console.log('window.location: ', window.location.pathname);
     };
 
     return (
@@ -56,30 +61,40 @@ const Header = () => {
             <HeaderStyles>
                 <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
             </HeaderStyles>
-            <NavStyles className="page-nav">
+            <NavStyles className="page-nav" onClick={clickHander}>
                 <div>
                     <Link href="/" passHref>
-                        <span className="underline">Common Words</span>
+                        <button type="button" id="/" className="underline">
+                            Common Words
+                        </button>
                     </Link>
                 </div>
                 <div>
                     <Link href="/punctuation" passHref>
-                        <span>Punctuation</span>
+                        <button type="button" id="/punctuation">
+                            Punctuation
+                        </button>
                     </Link>
                 </div>
                 <div>
                     <Link href="/dates-numbers" passHref>
-                        <span>Dates & Numbers</span>
+                        <button type="button" id="/dates-numbers">
+                            Dates & Numbers
+                        </button>
                     </Link>
                 </div>
                 <div>
                     <Link href="/best-practise" passHref>
-                        <span>Best Practise</span>
+                        <button type="button" id="/best-practise">
+                            Best Practise
+                        </button>
                     </Link>
                 </div>
                 <div>
                     <Link href="/tone-of-voice" passHref>
-                        <span>Tone of Voice</span>
+                        <button type="button" id="/tone-of-voice">
+                            Tone of Voice
+                        </button>
                     </Link>
                 </div>
             </NavStyles>
