@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import paths from '../../content/paths.json';
+
 const HeaderStyles = styled.nav`
     height: 22vh;
     display: flex;
@@ -50,33 +52,6 @@ const NavStyles = styled.nav`
         }
     }
 `;
-
-const paths = [
-    {
-        name: 'Common Words',
-        path: '/',
-    },
-    {
-        name: 'Punctuation',
-        path: '/punctuation',
-    },
-    {
-        name: 'Dates & Numbers',
-        path: '/dates-numbers',
-    },
-    {
-        name: 'Best Practise',
-        path: '/best-practise',
-    },
-    {
-        name: 'Quick Formatting',
-        path: '/quick-formatting',
-    },
-    {
-        name: 'Tone of Voice',
-        path: '/tone-of-voice',
-    },
-];
 
 const Header = () => {
     const router = useRouter();
