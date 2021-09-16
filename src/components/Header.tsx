@@ -69,6 +69,10 @@ const paths = [
         path: '/best-practise',
     },
     {
+        name: 'Quick Formatting',
+        path: '/quick-formatting',
+    },
+    {
         name: 'Tone of Voice',
         path: '/tone-of-voice',
     },
