@@ -6,7 +6,8 @@ export const PageStyles = styled.div`
 
 export const GridStyles = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-rows: masonry;
 `;
 
 export const GridItemStyles = styled.dl`

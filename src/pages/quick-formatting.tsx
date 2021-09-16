@@ -1,7 +1,17 @@
-const QuickFormatting = () => {
-    console.log('quick formatting');
+import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
+import formatting from '../../content/quick-formatting.json';
 
-    return <div>Quick Formatting page</div>;
-};
+const QuickFormatting = () => (
+    <PageStyles>
+        <GridStyles>
+            {formatting.map((item) => (
+                <GridItemStyles key={item.title}>
+                    <dt>{item.title}</dt>
+                    <dd>{item.value}</dd>
+                </GridItemStyles>
+            ))}
+        </GridStyles>
+    </PageStyles>
+);
 
 export default QuickFormatting;
