@@ -1,22 +1,34 @@
 [
     {
         "title": "American or British English",
-        "value": "You can write in US English or UK English. We want your writing to reflect your personality and the place in which you were brought up or call home."
+        "value": [
+            "You can write in US English or UK English. We want your writing to reflect your personality and the place in which you were brought up or call home."
+        ]
     },
     {
         "title": "Point of View",
-        "value": "Ideally, all texts including interview intros that feature in print or online should be written in the third person.</br></br>Generally speaking, our writing should not address the reader directly as “you”. We prefer the use of “one”, in line with our preference for third person perspective. However, on some occasions, it may be appropriate to use “you” depending on the tone of the text. Check with the editors if you are unsure."
+        "value": [
+            "Ideally, all texts including interview intros that feature in print or online should be written in the third person.",
+            "Generally speaking, our writing should not address the reader directly as “you”. We prefer the use of “one”, in line with our preference for third person perspective. However, on some occasions, it may be appropriate to use “you” depending on the tone of the text. Check with the editors if you are unsure."
+        ]
     },
     {
         "title": "Tense",
-        "value": "Interview introductions and commentary (e.g. laughs) should be written in present tense.</br></br>Generally speaking, essays / excursions and advertorials should also be written in present tense. Although a text may touch on a theme’s historical elements, writers should aim to communicate the significance of the thing or concept they are writing about in a modern context, focusing on its relationship to people and place. Therefore, present tense is normally the most suitable option.</br></br>There may be specific occasions when past or future tense is more suitable. Check with the eidtors if you are unsure.</br></br>Tense for accrediting quotes: if it is not clear when somebody said something, the accreditation should match the tense in which the article is written (normally present)."
+        "value": [
+            "Interview introductions and commentary (e.g. laughs) should be written in present tense.</br></br>Generally speaking, essays / excursions and advertorials should also be written in present tense. Although a text may touch on a theme’s historical elements, writers should aim to communicate the significance of the thing or concept they are writing about in a modern context, focusing on its relationship to people and place. Therefore, present tense is normally the most suitable option.",
+            "There may be specific occasions when past or future tense is more suitable. Check with the eidtors if you are unsure.",
+            "Tense for accrediting quotes: if it is not clear when somebody said something, the accreditation should match the tense in which the article is written (normally present)."
+        ]
     },
     {
         "title": "Voice (active vs passive)",
-        "value": "Generally speaking, interview introductions are written in active voice for the purpose of fluidity.</br></br>Essays / excursions may feature a mix of active and passive voice. It may be prudent to decide in which direction the voice should lean before writing."
+        "value": [
+            "Generally speaking, interview introductions are written in active voice for the purpose of fluidity.",
+            "Essays / excursions may feature a mix of active and passive voice. It may be prudent to decide in which direction the voice should lean before writing."
+        ]
     },
     {
         "title": "Quotations",
-        "value": ""
+        "value": [""]
     }
 ]
