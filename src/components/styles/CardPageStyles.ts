@@ -10,7 +10,7 @@ interface GridProps {
 
 export const GridStyles = styled.div<GridProps>`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: ${(p) => (p.page === 'best-practise' ? '1fr' : 'repeat(auto-fill, minmax(400px, 1fr))')};
     grid-template-rows: masonry;
 `;
 
@@ -33,6 +33,10 @@ export const GridItemStyles = styled.dl`
         align-self: flex-start;
         margin-bottom: 1rem;
         font-weight: bold;
+    }
+    div {
+        max-width: 80%;
+        align-self: flex-end;
     }
     dd {
         align-self: flex-end;

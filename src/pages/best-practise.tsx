@@ -3,15 +3,17 @@ import bestPractise from '../../content/best-practise.json';
 
 const BestPractise = () => (
     <PageStyles>
-        <GridStyles>
+        <GridStyles page="best-practise">
             {bestPractise.map((item) => (
                 <GridItemStyles key={item.title}>
                     <dt>{item.title}</dt>
-                    {item.value.map((val) => (
-                        <dd key={val} className="paragraphs">
-                            {val}
-                        </dd>
-                    ))}
+                    <div>
+                        {item.value.map((val) => (
+                            <dd key={val} className="paragraphs">
+                                {val}
+                            </dd>
+                        ))}
+                    </div>
                 </GridItemStyles>
             ))}
         </GridStyles>

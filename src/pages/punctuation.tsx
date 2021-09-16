@@ -3,7 +3,7 @@ import punctuation from '../../content/punctuation.json';
 
 const Punctuation = () => (
     <PageStyles>
-        <GridStyles>
+        <GridStyles page="punctuation">
             {punctuation.map((item) => (
                 <GridItemStyles key={item.title}>
                     <dt>{item.title}</dt>

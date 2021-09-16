@@ -3,7 +3,7 @@ import datesNumbers from '../../content/dates-numbers.json';
 
 const DatesNumbers = () => (
     <PageStyles>
-        <GridStyles>
+        <GridStyles page="dates-numbers">
             {datesNumbers.map((item) => (
                 <GridItemStyles key={item.title}>
                     <dt>{item.title}</dt>
