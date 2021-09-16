@@ -7,7 +7,11 @@ const BestPractise = () => (
             {bestPractise.map((item) => (
                 <GridItemStyles key={item.title}>
                     <dt>{item.title}</dt>
-                    <dd>{item.value}</dd>
+                    {item.value.map((val) => (
+                        <dd key={val} className="paragraphs">
+                            {val}
+                        </dd>
+                    ))}
                 </GridItemStyles>
             ))}
         </GridStyles>

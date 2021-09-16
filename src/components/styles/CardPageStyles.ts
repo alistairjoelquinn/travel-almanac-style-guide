@@ -4,7 +4,11 @@ export const PageStyles = styled.div`
     padding: 2rem;
 `;
 
-export const GridStyles = styled.div`
+interface GridProps {
+    page: string;
+}
+
+export const GridStyles = styled.div<GridProps>`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-template-rows: masonry;
@@ -33,5 +37,8 @@ export const GridItemStyles = styled.dl`
     dd {
         align-self: flex-end;
         text-align: left;
+        &.paragraphs {
+            margin-bottom: 0.5rem;
+        }
     }
 `;
