@@ -1,6 +1,6 @@
 import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
 import { useEffect, useState } from 'react';
-import { useTransition, animated, config } from 'react-spring'
+import { useTransition, config } from 'react-spring'
 
 import punctuation from '../../content/punctuation.json';
 
@@ -16,13 +16,13 @@ const Punctuation = () => {
         from: { opacity: 0, transform: 'translate3d(0,+40px,0)' },
         enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
         leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
-        delay: 200,
+        trail: 200,
         config: config.wobbly,
       })
 
     useEffect(() => {
-        setPunc(punctuation)
-    }, [punctuation])
+        setPunc(punctuation);
+    }, [punctuation]);
 
     return <PageStyles>
         <GridStyles page="punctuation">
