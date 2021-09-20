@@ -12,7 +12,8 @@ export const springValues = {
     from: { opacity: 0, transform: 'translate3d(0,4rem,0)' },
     enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
     leave: { opacity: 0, transform: 'translate3d(0,-4rem,0)' },
-    trail: 100,
+    delay: 300,
+    trail: 150,
     config: { mass: 1, tension: 200, friction: 10, clamp: true },
 };
 
