@@ -8,14 +8,16 @@ interface Punctuation {
     value: string;
 }
 
+export const springValues = {
+    from: { opacity: 0, transform: 'translate3d(0,4rem,0)' },
+    enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
+    leave: { opacity: 0, transform: 'translate3d(0,-4rem,0)' },
+    trail: 100,
+    config: { mass: 1, tension: 200, friction: 10, clamp: true },
+};
+
 const Punctuation = () => {
-    const transition = useTransition(punctuation, {
-        from: { opacity: 0, transform: 'translate3d(0,4rem,0)' },
-        enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
-        leave: { opacity: 0, transform: 'translate3d(0,-4rem,0)' },
-        trail: 100,
-        config: { mass: 1, tension: 200, friction: 10, clamp: true },
-    });
+    const transition = useTransition(punctuation, springValues);
 
     return (
         <PageStyles>
