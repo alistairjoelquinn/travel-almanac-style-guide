@@ -5,7 +5,7 @@
     },
     {
         "title": "Etcetera",
-        "value": "Write as etc without without It should be written as “etc..” when at the end of a sentence."
+        "value": "Write as etc without a dot at the end. It should be written as “etc.” when at the end of a sentence."
     },
     {
         "title": "e.g. and i.e.",
@@ -28,8 +28,8 @@
         "value": "single quotes"
     },
     {
-        "title": "Quotes and full stops",
-        "value": "Full stop inside and outside when quote at the end of the sentence and a full quote."
+        "title": "Punctuation within quotes",
+        "value": "The period and the comma always go within the quotation marks. The dash, semicolon, colon, question mark and exclamation point go within the quotation marks when they apply to the quoted matter only. They go outside when they apply to the whole sentence."
     },
     {
         "title": "A word in another language",
@@ -37,7 +37,7 @@
     },
     {
         "title": "Dash",
-        "value": "Use an EM dash whether for parentheses or to separate groups of words. Don’t use a hyphen."
+        "value": "Use an EM dash whether for parentheses or to separate groups of words. Don’t use a hyphen. Use an EN dash to separate dates as in 1999–2001 or simply write as 1999 to 2001."
     },
     {
         "title": "Ellipsis",
