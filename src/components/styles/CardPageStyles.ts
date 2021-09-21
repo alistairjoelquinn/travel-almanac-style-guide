@@ -11,7 +11,12 @@ interface GridProps {
 
 export const GridStyles = styled.div<GridProps>`
     display: grid;
-    grid-template-columns: ${(p) => (p.page === 'best-practise' ? '1fr' : 'repeat(auto-fill, minmax(400px, 1fr))')};
+    grid-template-columns: ${(p) =>
+        p.page === 'best-practise'
+            ? '1fr'
+            : p.page === 'common-words'
+            ? 'repeat(auto-fill, minmax(300px, 1fr))'
+            : 'repeat(auto-fill, minmax(400px, 1fr))'};
     grid-template-rows: masonry;
 `;
 

@@ -19,7 +19,7 @@ const Home = () => {
                     {transition((animation, item) => (
                         <GridItemStyles style={animation} key={item.title}>
                             <dt>{item.title}</dt>
-                            <dd>{item.value}</dd>
+                            {item.value && <dd>{item.value}</dd>}
                         </GridItemStyles>
                     ))}
                 </GridStyles>
