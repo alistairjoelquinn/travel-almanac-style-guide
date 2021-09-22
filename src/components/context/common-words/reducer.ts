@@ -1,9 +1,15 @@
+export interface Words {
+    title: string;
+    value: string;
+    category: string;
+}
+
 export interface InitialState {
-    currentTheme: string;
+    commonWords: Words[];
 }
 
 export const initialState: InitialState = {
-    currentTheme: 'light',
+    commonWords: [],
 };
 
 export interface Action {
@@ -12,10 +18,10 @@ export interface Action {
 }
 
 export const reducer = (state = initialState, action: Action) => {
-    if (action.type === 'TOGGLE_THEME') {
+    if (action.type === 'ADD_COMMON_WORDS') {
         return {
             ...state,
-            currentTheme: state.currentTheme === 'light' ? 'dark' : 'light',
+            commonWords: action.payload.words,
         };
     }
     return state;
