@@ -13,7 +13,9 @@ const Home = () => {
     const transition = useTransition(commonWords, springValues);
 
     useEffect(() => {
-        addCommonWordsToState(dispatch);
+        if (dispatch) {
+            addCommonWordsToState(dispatch);
+        }
     }, [dispatch]);
 
     return (

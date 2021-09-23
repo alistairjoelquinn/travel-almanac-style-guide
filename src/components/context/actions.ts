@@ -1,4 +1,4 @@
-import { Action } from './reducer';
+import { Action } from './models';
 
 import words from '../../../content/common-words.json';
 

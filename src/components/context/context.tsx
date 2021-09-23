@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer } from 'react';
-import { Action, InitialState, initialState, reducer } from './reducer';
+import { Action, InitialState } from './models';
+import { initialState, reducer } from './reducer';
 
 const StateContext = createContext<InitialState>({} as InitialState);
 const DispatchContext = createContext<React.Dispatch<Action>>(null!);
