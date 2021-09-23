@@ -22,5 +22,11 @@ export const reducer = (state = initialState, action: Action) => {
             punctuation: action.payload.punctuation,
         };
     }
+    if (action.type === 'ADD_DATES_NUMBERS') {
+        return {
+            ...state,
+            datesNumbers: action.payload.datesNumbers,
+        };
+    }
     return state;
 };
