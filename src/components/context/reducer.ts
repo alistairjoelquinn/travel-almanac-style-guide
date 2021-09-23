@@ -28,5 +28,11 @@ export const reducer = (state = initialState, action: Action) => {
             datesNumbers: action.payload.datesNumbers,
         };
     }
+    if (action.type === 'ADD_BEST_PRACTISE') {
+        return {
+            ...state,
+            bestPractise: action.payload.bestPractise,
+        };
+    }
     return state;
 };
