@@ -1,6 +1,6 @@
 import { Action } from './reducer';
 
-import words from '../../../../content/common-words.json';
+import words from '../../../content/common-words.json';
 
 export const addCommonWordsToState = async (dispatch: React.Dispatch<Action>) => {
     dispatch({

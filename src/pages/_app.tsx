@@ -4,7 +4,7 @@ import { useTransition, animated } from 'react-spring';
 import GlobalStyles from '@/components/styles/GlobalStyles';
 import Typography from '@/components/styles/Typography';
 import Page from '@/components/Page';
-import { CommonWordsProvider } from '@/components/context/common-words/context';
+import { StateProvider } from '@/components/context/context';
 
 const App = (props: AppProps) => {
     const transitionItems = [
@@ -27,13 +27,13 @@ const App = (props: AppProps) => {
             <GlobalStyles />
             <Typography />
             <Page>
-                <CommonWordsProvider>
+                <StateProvider>
                     {transition((styles, { Component, pageProps }) => (
                         <animated.div style={styles}>
                             <Component {...pageProps} />
                         </animated.div>
                     ))}
-                </CommonWordsProvider>
+                </StateProvider>
             </Page>
         </>
     );

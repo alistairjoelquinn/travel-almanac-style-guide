@@ -1,12 +1,17 @@
+import { useEffect } from 'react';
 import { useTransition } from 'react-spring';
 import Head from 'next/head';
 
 import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
-import commonWords from '../../content/common-words.json';
+import { CommonWordsDispatch, CommonWordsState } from '@/components/context/context';
 import { springValues } from './punctuation';
 
 const Home = () => {
+    const dispatch = useFriendsDispatch();
+    const friends = useFriendsState().users?.filter((user) => user.accepted === true);
     const transition = useTransition(commonWords, springValues);
+
+    useEffect(() => {}, []);
 
     return (
         <>
