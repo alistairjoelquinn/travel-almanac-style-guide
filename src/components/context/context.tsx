@@ -5,6 +5,9 @@ import { initialState, reducer } from './reducer';
 const StateContext = createContext<InitialState>({} as InitialState);
 const DispatchContext = createContext<React.Dispatch<Action>>(null!);
 
+export const State = () => useContext(StateContext);
+export const Dispatch = () => useContext(DispatchContext);
+
 export const StateProvider: React.FC = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -14,6 +17,3 @@ export const StateProvider: React.FC = ({ children }) => {
         </StateContext.Provider>
     );
 };
-
-export const State = () => useContext(StateContext);
-export const Dispatch = () => useContext(DispatchContext);

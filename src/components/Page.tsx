@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import { StateProvider } from '@/components/context/context';
 
 const mainStyles = {
     border: '10px solid #d64429',
@@ -7,10 +8,12 @@ const mainStyles = {
 };
 
 const Page: React.FC = ({ children }) => (
-    <main style={mainStyles}>
-        <Header />
-        {children}
-    </main>
+    <StateProvider>
+        <main style={mainStyles}>
+            <Header />
+            {children}
+        </main>
+    </StateProvider>
 );
 
 export default Page;
