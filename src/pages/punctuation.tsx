@@ -1,12 +1,9 @@
-import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
+import { useEffect } from 'react';
 import { useTransition } from 'react-spring';
 
-import punctuation from '../../content/punctuation.json';
-
-interface Punctuation {
-    title: string;
-    value: string;
-}
+import { addPunctuationToState } from '@/components/context/actions';
+import { Dispatch, State } from '@/components/context/context';
+import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
 
 export const springValues = {
     from: { opacity: 0, transform: 'translate3d(0,4rem,0)' },
@@ -18,7 +15,15 @@ export const springValues = {
 };
 
 const Punctuation = () => {
+    const dispatch = Dispatch();
+    const { punctuation } = State();
     const transition = useTransition(punctuation, springValues);
+
+    useEffect(() => {
+        if (dispatch) {
+            addPunctuationToState(dispatch);
+        }
+    }, [dispatch]);
 
     return (
         <PageStyles>

@@ -16,5 +16,11 @@ export const reducer = (state = initialState, action: Action) => {
             commonWords: action.payload.words,
         };
     }
+    if (action.type === 'ADD_PUNCTUATION') {
+        return {
+            ...state,
+            punctuation: action.payload.punctuation,
+        };
+    }
     return state;
 };
