@@ -1,21 +1,13 @@
-export interface Words {
-    title: string;
-    value: string;
-    category: string;
-}
-
-export interface InitialState {
-    commonWords: Words[];
-}
+import { Action, InitialState } from './models';
 
 export const initialState: InitialState = {
     commonWords: [],
+    punctuation: [],
+    datesNumbers: [],
+    bestPractise: [],
+    quickFormatting: [],
+    toneOfVoice: [],
 };
-
-export interface Action {
-    type: string;
-    payload?: any;
-}
 
 export const reducer = (state = initialState, action: Action) => {
     if (action.type === 'ADD_COMMON_WORDS') {
