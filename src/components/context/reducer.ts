@@ -34,5 +34,11 @@ export const reducer = (state = initialState, action: Action) => {
             bestPractise: action.payload.bestPractise,
         };
     }
+    if (action.type === 'ADD_QUICK_FORMATTING') {
+        return {
+            ...state,
+            quickFormatting: action.payload.quickFormatting,
+        };
+    }
     return state;
 };
