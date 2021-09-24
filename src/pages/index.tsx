@@ -8,21 +8,25 @@ import { addCommonWordsToState } from '@/components/context/actions';
 import alphabet from '@/lib/alphabet';
 
 interface StyleProps {
-    indexVal: number;
+    indexVal: number | string;
 }
 
 const LetterSelectStyles = styled.div<StyleProps>`
     width: 100%;
+    height: 4rem;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     margin-top: 3rem;
     padding: 0 1rem;
     span {
-        padding: 0.3rem;
-        font-size: 3rem;
+        height: 2.5rem;
+        font-size: 2.5rem;
         cursor: pointer;
+        background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 2px no-repeat;
+        transition: 0.5s;
         &:nth-child(${(p) => p.indexVal}) {
-            color: green;
+            --d: 100%;
         }
     }
 `;
