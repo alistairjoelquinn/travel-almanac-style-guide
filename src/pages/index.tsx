@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useTransition } from 'react-spring';
 import Head from 'next/head';
 import styled from 'styled-components';
 
@@ -7,16 +6,17 @@ import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/Card
 import { Dispatch, State } from '@/components/context/context';
 import { addCommonWordsToState } from '@/components/context/actions';
 import alphabet from '@/lib/alphabet';
-import { springValues } from './punctuation';
 
 const LetterSelectStyles = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     margin-top: 3rem;
+    padding: 0 1rem;
     span {
         padding: 0.3rem;
         font-size: 3rem;
+        cursor: pointer;
     }
 `;
 
@@ -25,7 +25,6 @@ const Home = () => {
     const dispatch = Dispatch();
     const { commonWords } = State();
     const displayWords = commonWords.filter((word) => word.category === letter);
-    const transition = useTransition(displayWords, springValues);
 
     useEffect(() => {
         if (dispatch) {
@@ -48,8 +47,8 @@ const Home = () => {
             </LetterSelectStyles>
             <PageStyles>
                 <GridStyles page="common-words">
-                    {transition((animation, item) => (
-                        <GridItemStyles style={animation} key={item.title}>
+                    {displayWords.map((item) => (
+                        <GridItemStyles key={item.title}>
                             <dt>{item.title}</dt>
                             {item.value && <dd>{item.value}</dd>}
                         </GridItemStyles>
