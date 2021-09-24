@@ -1,9 +1,9 @@
-import { addQuickFormattingToState } from '@/components/context/actions';
-import { Dispatch, State } from '@/components/context/context';
-import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
 import { useEffect } from 'react';
 import { useTransition } from 'react-spring';
 
+import { addQuickFormattingToState } from '@/components/context/actions';
+import { Dispatch, State } from '@/components/context/context';
+import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
 import { springValues } from './punctuation';
 
 const QuickFormatting = () => {

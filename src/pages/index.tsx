@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useTransition } from 'react-spring';
 import Head from 'next/head';
 
@@ -8,9 +8,11 @@ import { addCommonWordsToState } from '@/components/context/actions';
 import { springValues } from './punctuation';
 
 const Home = () => {
+    const [letter, setLetter] = useState('A');
     const dispatch = Dispatch();
     const { commonWords } = State();
-    const transition = useTransition(commonWords, springValues);
+    const displayWords = commonWords.filter((word) => word.category === letter);
+    const transition = useTransition(displayWords, springValues);
 
     useEffect(() => {
         if (dispatch) {
