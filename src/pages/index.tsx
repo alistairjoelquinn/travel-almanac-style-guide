@@ -7,7 +7,11 @@ import { Dispatch, State } from '@/components/context/context';
 import { addCommonWordsToState } from '@/components/context/actions';
 import alphabet from '@/lib/alphabet';
 
-const LetterSelectStyles = styled.div`
+interface StyleProps {
+    indexVal: number;
+}
+
+const LetterSelectStyles = styled.div<StyleProps>`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -17,14 +21,17 @@ const LetterSelectStyles = styled.div`
         padding: 0.3rem;
         font-size: 3rem;
         cursor: pointer;
+        &:nth-child(${(p) => p.indexVal}) {
+            color: green;
+        }
     }
 `;
 
 const Home = () => {
-    const [letter, setLetter] = useState('A');
+    const [letter, setLetter] = useState(['A', 1]);
     const dispatch = Dispatch();
     const { commonWords } = State();
-    const displayWords = commonWords.filter((word) => word.category === letter);
+    const displayWords = commonWords.filter((word) => word.category === letter[0]);
 
     useEffect(() => {
         if (dispatch) {
@@ -38,9 +45,9 @@ const Home = () => {
                 <title>Travel Almanac Style Guide</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <LetterSelectStyles>
-                {alphabet.map((alph) => (
-                    <span key={alph} onClick={() => setLetter(alph)}>
+            <LetterSelectStyles indexVal={letter[1]}>
+                {alphabet.map((alph, i) => (
+                    <span key={alph} onClick={() => setLetter([alph, i + 1])}>
                         {alph}
                     </span>
                 ))}
