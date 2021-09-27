@@ -35,7 +35,7 @@ const SearchBar = () => {
         }
     }, [userInput, dispatch]);
 
-    return <SearchBarStyles placeholder="Search here..." onChange={(e) => setUserInput(e.target.value)} />;
+    return <SearchBarStyles placeholder="Search..." onChange={(e) => setUserInput(e.target.value)} />;
 };
 
 export default SearchBar;

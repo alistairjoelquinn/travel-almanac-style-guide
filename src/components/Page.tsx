@@ -11,7 +11,6 @@ const mainStyles = {
 
 const Page: React.FC = ({ children }) => {
     const { searching } = State();
-    console.log('searching: ', searching);
 
     return (
         <main style={mainStyles}>

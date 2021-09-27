@@ -31,8 +31,7 @@ export const GridItemStyles = styled(animated.dl)`
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    margin: 4rem;
-    margin-top: 2rem;
+    margin: 2rem 4rem;
     &:hover {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
