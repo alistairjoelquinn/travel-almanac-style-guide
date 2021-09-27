@@ -26,6 +26,7 @@ export const GridItemStyles = styled(animated.dl)`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     display: flex;
+    background-color: #fff;
     flex-direction: column;
     justify-content: center;
     align-items: center;

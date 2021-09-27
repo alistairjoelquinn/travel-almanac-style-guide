@@ -11,6 +11,8 @@ const SearchBarStyles = styled.input`
     line-height: 2rem;
     font-size: 2rem;
     vertical-align: middle;
+    border-radius: 1rem;
+    border: 1px solid black;
     &:-webkit-input-placeholder,
     &:-ms-input-placeholder {
         line-height: 2rem;
