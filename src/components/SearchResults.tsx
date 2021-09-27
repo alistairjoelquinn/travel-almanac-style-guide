@@ -1,5 +1,5 @@
 const SearchResults = () => {
-    console.log('sresults');
+    console.log('search results');
     return (
         <div>
             <h2>Search Results</h2>

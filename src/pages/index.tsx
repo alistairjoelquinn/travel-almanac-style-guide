@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import { useSpring } from 'react-spring';
 
 import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
 import { Dispatch, State } from '@/components/context/context';
@@ -18,7 +17,7 @@ const LetterSelectStyles = styled.div<StyleProps>`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
     padding: 0 1rem;
     span {
         height: 2.5rem;

@@ -2,7 +2,7 @@ import { animated } from 'react-spring';
 import styled from 'styled-components';
 
 export const PageStyles = styled.div`
-    padding: 2rem;
+    padding: 0 2rem;
 `;
 
 interface GridProps {
