@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import { State, StateProvider } from '@/components/context/context';
 import SearchBar from './SearchBar';
+import SearchResults from './SearchResults';
 
 const mainStyles = {
     border: '10px solid #d64429',
@@ -15,7 +16,8 @@ const Page: React.FC = ({ children }) => {
         <StateProvider>
             <main style={mainStyles}>
                 <Header />
-                {searching ? SearchBar : children}
+                <SearchBar />
+                {searching ? SearchResults : children}
             </main>
         </StateProvider>
     );
