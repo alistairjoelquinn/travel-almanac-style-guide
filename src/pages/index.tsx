@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import { useSpring } from 'react-spring';
 
 import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
 import { Dispatch, State } from '@/components/context/context';
