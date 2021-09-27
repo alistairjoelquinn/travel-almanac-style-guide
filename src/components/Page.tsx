@@ -1,3 +1,5 @@
+import { animated, useTransition } from 'react-spring';
+
 import Header from '@/components/Header';
 import { State } from '@/components/context/context';
 import SearchBar from './SearchBar';
@@ -12,11 +14,19 @@ const mainStyles = {
 const Page: React.FC = ({ children }) => {
     const { searching } = State();
 
+    const transition = useTransition(searching, {
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+    });
+
     return (
         <main style={mainStyles}>
             <Header />
             <SearchBar />
-            {searching ? <SearchResults /> : children}
+            {transition((styles, val) => (
+                <animated.div style={styles}>{val ? <SearchResults /> : children}</animated.div>
+            ))}
         </main>
     );
 };
