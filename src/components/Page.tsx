@@ -1,5 +1,5 @@
 import Header from '@/components/Header';
-import { State, StateProvider } from '@/components/context/context';
+import { State } from '@/components/context/context';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 
@@ -11,15 +11,14 @@ const mainStyles = {
 
 const Page: React.FC = ({ children }) => {
     const { searching } = State();
+    console.log('searching: ', searching);
 
     return (
-        <StateProvider>
-            <main style={mainStyles}>
-                <Header />
-                <SearchBar />
-                {searching ? SearchResults : children}
-            </main>
-        </StateProvider>
+        <main style={mainStyles}>
+            <Header />
+            <SearchBar />
+            {searching ? <SearchResults /> : children}
+        </main>
     );
 };
 

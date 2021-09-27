@@ -41,5 +41,17 @@ export const reducer = (state = initialState, action: Action) => {
             quickFormatting: action.payload.quickFormatting,
         };
     }
+    if (action.type === 'USER_SEARCH_COMMENCED') {
+        return {
+            ...state,
+            searching: true,
+        };
+    }
+    if (action.type === 'USER_SEARCH_ENDED') {
+        return {
+            ...state,
+            searching: false,
+        };
+    }
     return state;
 };

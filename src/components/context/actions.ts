@@ -50,3 +50,17 @@ export const addQuickFormattingToState = async (dispatch: React.Dispatch<Action>
         },
     });
 };
+
+export const userSearchCommence = async (dispatch: React.Dispatch<Action>) => {
+    dispatch({
+        type: 'USER_SEARCH_COMMENCED',
+        payload: {},
+    });
+};
+
+export const userSearchEnd = async (dispatch: React.Dispatch<Action>) => {
+    dispatch({
+        type: 'USER_SEARCH_ENDED',
+        payload: {},
+    });
+};
