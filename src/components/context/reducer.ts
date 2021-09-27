@@ -7,6 +7,7 @@ export const initialState: InitialState = {
     bestPractise: [],
     quickFormatting: [],
     toneOfVoice: [],
+    searching: false,
 };
 
 export const reducer = (state = initialState, action: Action) => {

@@ -19,6 +19,7 @@ export interface InitialState {
     bestPractise: ArrayItem[];
     quickFormatting: StandardItem[];
     toneOfVoice: StandardItem[] | ArrayItem[];
+    searching: boolean;
 }
 
 export interface Action {
