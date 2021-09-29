@@ -1,0 +1,54 @@
+[
+    {
+        "title": "Composition titles (books, song, plays, films etc)",
+        "value": "write in italics (no quotations)"
+    },
+    {
+        "title": "Quoting Speech",
+        "value": "All speech should be in double quotes"
+    },
+    {
+        "title": "Quoting thoughts in interviews",
+        "value": "single quotes"
+    },
+    {
+        "title": "Apostrophes",
+        "value": "Please ensure you word processor is set up to write xxxx apostrophes. The difference between xxxx and xxxx apostrophes is very small, but can be picked up by a keen eye in the printed magazine. It’s important this remains consistent. "
+    },
+    {
+        "title": "Punctuation within quotes",
+        "value": "The period and the comma always go within the quotation marks. The dash, semicolon, colon, question mark and exclamation point go within the quotation marks when they apply to the quoted matter only. They go outside when they apply to the whole sentence."
+    },
+    {
+        "title": "Dash",
+        "value": "Use an EM dash whether for parentheses or to separate groups of words."
+    },
+    {
+        "title": "Dates",
+        "value": "9th January or January 9th, 1996 or ’96"
+    },
+    {
+        "title": "A word in another language",
+        "value": "Use italics if not commonly used. "
+    },
+    {
+        "title": "Measurements",
+        "value": "Always use a space before m, km, ft etc"
+    },
+    {
+        "title": "Double Space",
+        "value": "We don’t use double space at the beginning of sentence."
+    },
+    {
+        "title": "Ellypsis",
+        "value": "If someone trails off while speaking use “...”"
+    },
+    {
+        "title": "Round brackets",
+        "value": "Used as parentheses only when the sentence doesn’t make grammatical sense without."
+    },
+    {
+        "title": "Square brackets",
+        "value": "Used to inset missing words."
+    }
+]

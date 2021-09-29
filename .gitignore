@@ -10,7 +10,6 @@
 
 # misc
 .DS_Store
-content
 
 # debug
 npm-debug.log*

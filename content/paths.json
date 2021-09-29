@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Common Words",
+        "path": "/"
+    },
+    {
+        "name": "Punctuation",
+        "path": "/punctuation"
+    },
+    {
+        "name": "Dates & Numbers",
+        "path": "/dates-numbers"
+    },
+    {
+        "name": "Best Practise",
+        "path": "/best-practise"
+    },
+    {
+        "name": "Quick Formatting",
+        "path": "/quick-formatting"
+    },
+    {
+        "name": "Tone of Voice",
+        "path": "/tone-of-voice"
+    }
+]
