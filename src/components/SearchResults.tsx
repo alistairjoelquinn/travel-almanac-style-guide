@@ -1,4 +1,5 @@
 import { State } from './context/context';
+import { GridItemStyles, GridStyles, PageStyles } from './styles/CardPageStyles';
 
 const SearchResults = () => {
     const state = State();
@@ -16,7 +17,18 @@ const SearchResults = () => {
 
     console.log('results: ', results);
 
-    return <div>{JSON.stringify(results)}</div>;
+    return (
+        <PageStyles>
+            <GridStyles page="search">
+                {results.map((item, i) => (
+                    <GridItemStyles key={`${item.title}${i}`}>
+                        <dt>{item.title}</dt>
+                        <dd>{item.value}</dd>
+                    </GridItemStyles>
+                ))}
+            </GridStyles>
+        </PageStyles>
+    );
 };
 
 export default SearchResults;
