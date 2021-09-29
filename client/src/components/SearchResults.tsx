@@ -9,7 +9,7 @@ const SearchResults = () => {
         .filter((item) => {
             const vals: string[] = Object.values(item);
             for (let i = 0; i < vals.length; i++) {
-                if (vals[i].includes(state.searchTerm)) {
+                if (vals[i].toLowerCase().includes(state.searchTerm.toLowerCase())) {
                     return item;
                 }
             }
