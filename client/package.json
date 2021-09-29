@@ -1,9 +1,8 @@
 {
-  "name": "nextjs-typescript-starter",
+  "name": "travel-almanac-style-guide",
   "version": "1.0.0",
   "private": true,
   "author": "Alistair Quinn",
-  "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
