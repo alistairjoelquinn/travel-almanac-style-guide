@@ -4,7 +4,7 @@ export const initialState: InitialState = {
     commonWords: [],
     punctuation: [],
     datesNumbers: [],
-    bestPractise: [],
+    bestPractice: [],
     quickFormatting: [],
     toneOfVoice: [],
     searching: false,
@@ -33,7 +33,7 @@ export const reducer = (state = initialState, action: Action) => {
     if (action.type === 'ADD_BEST_PRACTISE') {
         return {
             ...state,
-            bestPractise: action.payload.bestPractise,
+            bestPractice: action.payload.bestPractice,
         };
     }
     if (action.type === 'ADD_QUICK_FORMATTING') {

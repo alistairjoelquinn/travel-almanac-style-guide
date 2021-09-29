@@ -12,7 +12,7 @@ interface GridProps {
 export const GridStyles = styled.div<GridProps>`
     display: grid;
     grid-template-columns: ${(p) =>
-        p.page === 'best-practise'
+        p.page === 'best-practice'
             ? '1fr'
             : p.page === 'common-words'
             ? 'repeat(auto-fill, minmax(300px, 1fr))'
