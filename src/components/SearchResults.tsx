@@ -16,15 +16,42 @@ const SearchResults = () => {
             return false;
         });
 
-    console.log('results: ', results);
+    const highlightResult = (result: string | string[]) => {
+        if (typeof result === 'string') {
+            return result.split(new RegExp(`(${state.searchTerm})`, `gi`)).map((item, i) => (
+                <span
+                    key={i}
+                    style={{
+                        background:
+                            item.toLowerCase() === state.searchTerm.toLocaleLowerCase() ? 'yellow' : 'transparent',
+                    }}
+                >
+                    {item}
+                </span>
+            ));
+        }
+        return result.map((item) =>
+            item.split(new RegExp(`(${state.searchTerm})`, `gi`)).map((innerItem, i) => (
+                <span
+                    key={i}
+                    style={{
+                        background:
+                            innerItem.toLowerCase() === state.searchTerm.toLocaleLowerCase() ? 'yellow' : 'transparent',
+                    }}
+                >
+                    {item}
+                </span>
+            )),
+        );
+    };
 
     return (
         <PageStyles>
             <GridStyles page="search">
                 {results.map((item, i) => (
                     <GridItemStyles key={`${item.title}${i}`}>
-                        <dt>{item.title}</dt>
-                        <dd>{item.value}</dd>
+                        <dt>{item.title && highlightResult(item.title)}</dt>
+                        <dd>{item.value && highlightResult(item.value)}</dd>
                     </GridItemStyles>
                 ))}
             </GridStyles>
