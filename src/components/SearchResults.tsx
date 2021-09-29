@@ -1,8 +1,12 @@
+import { State } from './context/context';
+
 const SearchResults = () => {
-    console.log('search results');
+    const state = State();
+    const results = Object.values(state).flat();
+
     return (
         <div>
-            <h2>Search Results</h2>
+            {state.}
         </div>
     );
 };

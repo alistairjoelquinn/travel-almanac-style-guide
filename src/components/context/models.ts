@@ -20,6 +20,7 @@ export interface InitialState {
     quickFormatting: StandardItem[];
     toneOfVoice: StandardItem[] | ArrayItem[];
     searching: boolean;
+    searchTerm: string;
 }
 
 export interface Action {

@@ -8,6 +8,7 @@ export const initialState: InitialState = {
     quickFormatting: [],
     toneOfVoice: [],
     searching: false,
+    searchTerm: '',
 };
 
 export const reducer = (state = initialState, action: Action) => {
