@@ -1,25 +1,25 @@
 import { useEffect } from 'react';
 import { useTransition } from 'react-spring';
 
-import { addBestPractiseToState } from '@/components/context/actions';
+import { addBestPracticeToState } from '@/components/context/actions';
 import { Dispatch, State } from '@/components/context/context';
 import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
 import { springValues } from './punctuation';
 
-const BestPractise = () => {
+const BestPractice = () => {
     const dispatch = Dispatch();
-    const { bestPractise } = State();
-    const transition = useTransition(bestPractise, springValues);
+    const { bestPractice } = State();
+    const transition = useTransition(bestPractice, springValues);
 
     useEffect(() => {
         if (dispatch) {
-            addBestPractiseToState(dispatch);
+            addBestPracticeToState(dispatch);
         }
     }, [dispatch]);
 
     return (
         <PageStyles>
-            <GridStyles page="best-practise">
+            <GridStyles page="best-practice">
                 {transition((animation, item) => (
                     <GridItemStyles style={animation} key={item.title}>
                         <dt>{item.title}</dt>
@@ -37,4 +37,4 @@ const BestPractise = () => {
     );
 };
 
-export default BestPractise;
+export default BestPractice;

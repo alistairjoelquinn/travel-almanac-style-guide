@@ -4,7 +4,7 @@ import {
     getSearchResults,
     userSearchCommence,
     userSearchEnd,
-    addBestPractiseToState,
+    addBestPracticeToState,
     addCommonWordsToState,
     addDatesNumbersToState,
     addPunctuationToState,
@@ -40,7 +40,7 @@ const SearchBar = () => {
         if (userInput) {
             (async () => {
                 await Promise.all([
-                    addBestPractiseToState(dispatch),
+                    addBestPracticeToState(dispatch),
                     addCommonWordsToState(dispatch),
                     addDatesNumbersToState(dispatch),
                     addPunctuationToState(dispatch),
