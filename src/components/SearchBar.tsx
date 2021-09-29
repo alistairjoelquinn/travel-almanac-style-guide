@@ -1,6 +1,15 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { getSearchResults, userSearchCommence, userSearchEnd } from './context/actions';
+import {
+    getSearchResults,
+    userSearchCommence,
+    userSearchEnd,
+    addBestPractiseToState,
+    addCommonWordsToState,
+    addDatesNumbersToState,
+    addPunctuationToState,
+    addQuickFormattingToState,
+} from './context/actions';
 import { Dispatch } from './context/context';
 
 const SearchBarStyles = styled.input`
@@ -28,9 +37,21 @@ const SearchBar = () => {
     const [userInput, setUserInput] = useState('');
 
     useEffect(() => {
+        console.log('userInput: ', userInput);
+        console.log('userInput: ', !!userInput);
         if (userInput) {
-            userSearchCommence(dispatch);
-            getSearchResults(dispatch, userInput);
+            console.log('running');
+            (async () => {
+                await Promise.all([
+                    addBestPractiseToState(dispatch),
+                    addCommonWordsToState(dispatch),
+                    addDatesNumbersToState(dispatch),
+                    addPunctuationToState(dispatch),
+                    addQuickFormattingToState(dispatch),
+                ]);
+                await userSearchCommence(dispatch);
+                await getSearchResults(dispatch, userInput);
+            })();
         } else {
             userSearchEnd(dispatch);
         }
