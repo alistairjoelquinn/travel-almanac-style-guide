@@ -9,8 +9,16 @@ const SearchResults = () => {
         .filter((item) => {
             const vals: string[] = Object.values(item);
             for (let i = 0; i < vals.length; i++) {
-                if (vals[i].toLowerCase().includes(state.searchTerm.toLowerCase())) {
-                    return item;
+                if (typeof vals[i] === 'string') {
+                    if (vals[i].toLowerCase().includes(state.searchTerm.toLowerCase())) {
+                        return item;
+                    }
+                } else if (Array.isArray(vals[i])) {
+                    for (let j = 0; j < vals[i].length; j++) {
+                        if (vals[i][j].toLowerCase().includes(state.searchTerm.toLowerCase())) {
+                            return item;
+                        }
+                    }
                 }
             }
             return false;
