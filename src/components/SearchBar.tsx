@@ -37,10 +37,7 @@ const SearchBar = () => {
     const [userInput, setUserInput] = useState('');
 
     useEffect(() => {
-        console.log('userInput: ', userInput);
-        console.log('userInput: ', !!userInput);
         if (userInput) {
-            console.log('running');
             (async () => {
                 await Promise.all([
                     addBestPractiseToState(dispatch),

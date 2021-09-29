@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import paths from '../../content/paths.json';
+import { State } from './context/context';
 
 const HeaderStyles = styled.nav`
     height: 22vh;
@@ -23,7 +24,11 @@ const HeaderStyles = styled.nav`
     }
 `;
 
-const NavStyles = styled.nav`
+interface NavProps {
+    searching: boolean;
+}
+
+const NavStyles = styled.nav<NavProps>`
     width: 95%;
     margin-left: 2.5%;
     display: flex;
@@ -48,7 +53,7 @@ const NavStyles = styled.nav`
             background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 2px no-repeat;
             transition: 0.5s;
             &.underline {
-                --d: 100%;
+                --d: ${(p) => (p.searching ? '0' : '100%')};
             }
         }
     }
@@ -56,13 +61,14 @@ const NavStyles = styled.nav`
 
 const Header = () => {
     const router = useRouter();
+    const { searching } = State();
 
     return (
         <>
             <HeaderStyles>
                 <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
             </HeaderStyles>
-            <NavStyles className="page-nav">
+            <NavStyles className="page-nav" searching={searching}>
                 {paths.map((path) => (
                     <div key={path.name}>
                         <Link href={path.path} passHref>
