@@ -67,7 +67,7 @@ export const userSearchEnd = async (dispatch: React.Dispatch<Action>) => {
 
 export const getSearchResults = async (dispatch: React.Dispatch<Action>, userInput: string) => {
     dispatch({
-        type: 'USER_SEARCH_ENDED',
+        type: 'USER_SEARCH_INPUT',
         payload: userInput,
     });
 };

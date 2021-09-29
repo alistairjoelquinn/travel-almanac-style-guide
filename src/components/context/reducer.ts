@@ -54,5 +54,11 @@ export const reducer = (state = initialState, action: Action) => {
             searching: false,
         };
     }
+    if (action.type === 'USER_SEARCH_INPUT') {
+        return {
+            ...state,
+            searchTerm: action.payload,
+        };
+    }
     return state;
 };
