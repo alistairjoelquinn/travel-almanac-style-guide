@@ -35,7 +35,7 @@ export const addDatesNumbersToState = async (dispatch: React.Dispatch<Action>) =
 
 export const addBestPracticeToState = async (dispatch: React.Dispatch<Action>) => {
     dispatch({
-        type: 'ADD_BEST_PRACTISE',
+        type: 'ADD_BEST_PRACTICE',
         payload: {
             bestPractice,
         },

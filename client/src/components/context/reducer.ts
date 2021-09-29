@@ -30,7 +30,7 @@ export const reducer = (state = initialState, action: Action) => {
             datesNumbers: action.payload.datesNumbers,
         };
     }
-    if (action.type === 'ADD_BEST_PRACTISE') {
+    if (action.type === 'ADD_BEST_PRACTICE') {
         return {
             ...state,
             bestPractice: action.payload.bestPractice,
