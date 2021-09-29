@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { userSearchCommence, userSearchEnd } from './context/actions';
+import { getSearchResults, userSearchCommence, userSearchEnd } from './context/actions';
 import { Dispatch } from './context/context';
 
 const SearchBarStyles = styled.input`
@@ -30,6 +30,7 @@ const SearchBar = () => {
     useEffect(() => {
         if (userInput) {
             userSearchCommence(dispatch);
+            getSearchResults(dispatch, userInput);
         } else {
             userSearchEnd(dispatch);
         }
