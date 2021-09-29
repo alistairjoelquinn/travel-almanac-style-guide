@@ -1,9 +1,11 @@
+import { Dispatch as ReactDispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import paths from '../../content/paths.json';
-import { State } from './context/context';
+import { Dispatch, State } from './context/context';
+import { userSearchEnd } from './context/actions';
 
 const HeaderStyles = styled.nav`
     height: 22vh;
@@ -59,9 +61,10 @@ const NavStyles = styled.nav<NavProps>`
     }
 `;
 
-const Header = () => {
+const Header = ({ setUserInput }: { setUserInput: ReactDispatch<SetStateAction<string>> }) => {
     const router = useRouter();
     const { searching } = State();
+    const dispatch = Dispatch();
 
     return (
         <>
@@ -70,7 +73,13 @@ const Header = () => {
             </HeaderStyles>
             <NavStyles className="page-nav" searching={searching}>
                 {paths.map((path) => (
-                    <div key={path.name}>
+                    <div
+                        key={path.name}
+                        onClick={() => {
+                            userSearchEnd(dispatch);
+                            setUserInput('');
+                        }}
+                    >
                         <Link href={path.path} passHref>
                             <button type="button" className={router.pathname === path.path ? 'underline' : ''}>
                                 {path.name}

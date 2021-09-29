@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Header from '@/components/Header';
 import { State } from '@/components/context/context';
 import SearchBar from './SearchBar';
@@ -11,11 +13,12 @@ const mainStyles = {
 
 const Page: React.FC = ({ children }) => {
     const { searching } = State();
+    const [userInput, setUserInput] = useState('');
 
     return (
         <main style={mainStyles}>
-            <Header />
-            <SearchBar />
+            <Header setUserInput={setUserInput} />
+            <SearchBar userInput={userInput} setUserInput={setUserInput} />
             {searching ? <SearchResults /> : children}
         </main>
     );

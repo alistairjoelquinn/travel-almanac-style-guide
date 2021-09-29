@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Dispatch as ReactDispatch, SetStateAction, useEffect } from 'react';
 import styled from 'styled-components';
 import {
     getSearchResults,
@@ -32,9 +32,14 @@ const SearchBarStyles = styled.input`
     }
 `;
 
-const SearchBar = () => {
+const SearchBar = ({
+    userInput,
+    setUserInput,
+}: {
+    userInput: string;
+    setUserInput: ReactDispatch<SetStateAction<string>>;
+}) => {
     const dispatch = Dispatch();
-    const [userInput, setUserInput] = useState('');
 
     useEffect(() => {
         if (userInput) {
@@ -54,7 +59,7 @@ const SearchBar = () => {
         }
     }, [userInput, dispatch]);
 
-    return <SearchBarStyles placeholder="Search..." onChange={(e) => setUserInput(e.target.value)} />;
+    return <SearchBarStyles placeholder="Search..." onChange={(e) => setUserInput(e.target.value)} value={userInput} />;
 };
 
 export default SearchBar;
