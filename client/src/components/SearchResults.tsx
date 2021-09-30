@@ -40,31 +40,25 @@ const SearchResults = () => {
         }
         return (
             <ul>
-                {result.map((item) => {
-                    console.log('hi', item);
-                    return (
-                        <li key={item}>
-                            {item.toLowerCase().indexOf(state.searchTerm.toLowerCase()) > -1
-                                ? item.split(new RegExp(`(${state.searchTerm})`, `gi`)).map((innerItem, i) => {
-                                      console.log(state.searchTerm, innerItem);
-                                      return (
-                                          <span
-                                              key={`${innerItem}-${i}`}
-                                              style={{
-                                                  backgroundColor:
-                                                      innerItem.toLowerCase() === state.searchTerm.toLowerCase()
-                                                          ? 'yellow'
-                                                          : 'transparent',
-                                              }}
-                                          >
-                                              {innerItem}
-                                          </span>
-                                      );
-                                  })
-                                : item}
-                        </li>
-                    );
-                })}
+                {result.map((item) => (
+                    <li key={item}>
+                        {item.toLowerCase().indexOf(state.searchTerm.toLowerCase()) > -1
+                            ? item.split(new RegExp(`(${state.searchTerm})`, `gi`)).map((innerItem, i) => (
+                                  <span
+                                      key={`${innerItem}-${i}`}
+                                      style={{
+                                          backgroundColor:
+                                              innerItem.toLowerCase() === state.searchTerm.toLowerCase()
+                                                  ? 'yellow'
+                                                  : 'transparent',
+                                      }}
+                                  >
+                                      {innerItem}
+                                  </span>
+                              ))
+                            : item}
+                    </li>
+                ))}
             </ul>
         );
     };
