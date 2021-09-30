@@ -4,7 +4,7 @@ import { GridItemStyles, GridStyles, PageStyles } from './styles/CardPageStyles'
 const SearchResults = () => {
     const state = State();
     const results = Object.values(state)
-        .splice(0, 6)
+        .slice(0, 6)
         .flat()
         .filter((item) => {
             const vals: string[] = Object.values(item);
