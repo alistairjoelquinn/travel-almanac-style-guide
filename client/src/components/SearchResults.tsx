@@ -38,19 +38,27 @@ const SearchResults = () => {
                 </span>
             ));
         }
-        return result.map((item) =>
-            item.split(new RegExp(`(${state.searchTerm})`, `gi`)).map((innerItem, i) => (
-                <span
-                    key={i}
-                    style={{
-                        background:
-                            innerItem.toLowerCase() === state.searchTerm.toLocaleLowerCase() ? 'yellow' : 'transparent',
-                    }}
-                >
-                    {item}
-                </span>
-            )),
-        );
+        return result.map((item) => (
+            <ul key={item}>
+                <li>
+                    {item.includes(state.searchTerm)
+                        ? item.split(new RegExp(`(${state.searchTerm})`, `gi`)).map((innerItem, i) => (
+                              <span
+                                  key={`${innerItem}-${i}`}
+                                  style={{
+                                      background:
+                                          innerItem.toLowerCase() === state.searchTerm.toLowerCase()
+                                              ? 'yellow'
+                                              : 'transparent',
+                                  }}
+                              >
+                                  {innerItem}
+                              </span>
+                          ))
+                        : item}
+                </li>
+            </ul>
+        ));
     };
 
     return (
