@@ -38,27 +38,35 @@ const SearchResults = () => {
                 </span>
             ));
         }
-        return result.map((item) => (
-            <ul key={item}>
-                <li>
-                    {item.includes(state.searchTerm)
-                        ? item.split(new RegExp(`(${state.searchTerm})`, `gi`)).map((innerItem, i) => (
-                              <span
-                                  key={`${innerItem}-${i}`}
-                                  style={{
-                                      background:
-                                          innerItem.toLowerCase() === state.searchTerm.toLowerCase()
-                                              ? 'yellow'
-                                              : 'transparent',
-                                  }}
-                              >
-                                  {innerItem}
-                              </span>
-                          ))
-                        : item}
-                </li>
+        return (
+            <ul>
+                {result.map((item) => {
+                    console.log('hi', item);
+                    return (
+                        <li key={item}>
+                            {item.toLowerCase().indexOf(state.searchTerm.toLowerCase()) > -1
+                                ? item.split(new RegExp(`(${state.searchTerm})`, `gi`)).map((innerItem, i) => {
+                                      console.log(state.searchTerm, innerItem);
+                                      return (
+                                          <span
+                                              key={`${innerItem}-${i}`}
+                                              style={{
+                                                  backgroundColor:
+                                                      innerItem.toLowerCase() === state.searchTerm.toLowerCase()
+                                                          ? 'yellow'
+                                                          : 'transparent',
+                                              }}
+                                          >
+                                              {innerItem}
+                                          </span>
+                                      );
+                                  })
+                                : item}
+                        </li>
+                    );
+                })}
             </ul>
-        ));
+        );
     };
 
     return (
