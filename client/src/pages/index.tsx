@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import { Masonry } from 'masonic';
 
 import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
 import { Dispatch, State } from '@/components/context/context';
 import { addCommonWordsToState } from '@/components/context/actions';
 import alphabet from '@/lib/alphabet';
+import { StandardItem, Words } from '@/components/context/models';
 
 interface StyleProps {
     indexVal: number | string;
@@ -37,6 +39,13 @@ const Home = () => {
     const { commonWords } = State();
     const displayWords = commonWords.filter((word) => word.category === letter[0]);
 
+    const Card = ({ data }: { data: Words }) => (
+        <GridItemStyles key={data.title}>
+            <dt>{data.title}</dt>
+            {data.value && <dd>{data.value}</dd>}
+        </GridItemStyles>
+    );
+
     useEffect(() => {
         if (dispatch) {
             addCommonWordsToState(dispatch);
@@ -57,14 +66,7 @@ const Home = () => {
                 ))}
             </LetterSelectStyles>
             <PageStyles>
-                <GridStyles page="common-words">
-                    {displayWords.map((item) => (
-                        <GridItemStyles key={item.title}>
-                            <dt>{item.title}</dt>
-                            {item.value && <dd>{item.value}</dd>}
-                        </GridItemStyles>
-                    ))}
-                </GridStyles>
+                <Masonry items={displayWords} columnWidth={300} render={Card} />
             </PageStyles>
         </>
     );
