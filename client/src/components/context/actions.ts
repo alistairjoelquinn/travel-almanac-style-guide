@@ -51,19 +51,10 @@ export const addQuickFormattingToState = async (dispatch: React.Dispatch<Action>
     });
 };
 
-export const userSearchCommence = async (dispatch: React.Dispatch<Action>) => {
-    dispatch({
-        type: 'USER_SEARCH_COMMENCED',
-        payload: {},
-    });
-};
+export const userSearchCommence = async (dispatch: React.Dispatch<Action>) =>
+    dispatch({ type: 'USER_SEARCH_COMMENCED' });
 
-export const userSearchEnd = async (dispatch: React.Dispatch<Action>) => {
-    dispatch({
-        type: 'USER_SEARCH_ENDED',
-        payload: {},
-    });
-};
+export const userSearchEnd = async (dispatch: React.Dispatch<Action>) => dispatch({ type: 'USER_SEARCH_ENDED' });
 
 export const getSearchResults = async (dispatch: React.Dispatch<Action>, userInput: string) => {
     dispatch({
