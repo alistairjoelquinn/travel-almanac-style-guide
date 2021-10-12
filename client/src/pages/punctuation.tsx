@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { useTransition } from 'react-spring';
 
 import { addPunctuationToState } from '@/components/context/actions';
 import { Dispatch, State } from '@/components/context/context';
-import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
+import { GridItemStyles, PageStyles } from '@/components/styles/CardPageStyles';
+import { Masonry } from 'masonic';
 
 export const springValues = {
     from: { opacity: 0, transform: 'translate3d(0,4rem,0)' },
@@ -14,10 +14,16 @@ export const springValues = {
     config: { mass: 1, tension: 200, friction: 10, clamp: true },
 };
 
+export const Card = ({ data }: { data: Words }) => (
+    <GridItemStyles key={data.title}>
+        <dt>{data.title}</dt>
+        {data.value && <dd>{data.value}</dd>}
+    </GridItemStyles>
+);
+
 const Punctuation = () => {
     const dispatch = Dispatch();
     const { punctuation } = State();
-    const transition = useTransition(punctuation, springValues);
 
     useEffect(() => {
         if (dispatch) {
@@ -27,14 +33,7 @@ const Punctuation = () => {
 
     return (
         <PageStyles>
-            <GridStyles page="punctuation">
-                {transition((animation, item) => (
-                    <GridItemStyles style={animation} key={item.title}>
-                        <dt>{item.title}</dt>
-                        <dd>{item.value}</dd>
-                    </GridItemStyles>
-                ))}
-            </GridStyles>
+            <Masonry items={punctuation} columnWidth={300} render={Card} />
         </PageStyles>
     );
 };
