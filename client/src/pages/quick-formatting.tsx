@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
-import { useTransition } from 'react-spring';
 
 import { addQuickFormattingToState } from '@/components/context/actions';
 import { Dispatch, State } from '@/components/context/context';
-import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
-import { springValues } from './punctuation';
+import { PageStyles } from '@/components/styles/CardPageStyles';
+import { Masonry } from 'masonic';
+import { BasicCard } from './punctuation';
 
 const QuickFormatting = () => {
     const dispatch = Dispatch();
     const { quickFormatting } = State();
-    const transition = useTransition(quickFormatting, springValues);
 
     useEffect(() => {
         if (dispatch) {
@@ -19,14 +18,7 @@ const QuickFormatting = () => {
 
     return (
         <PageStyles>
-            <GridStyles page="quick-formatting">
-                {transition((animation, item) => (
-                    <GridItemStyles style={animation} key={item.title}>
-                        <dt>{item.title}</dt>
-                        <dd>{item.value}</dd>
-                    </GridItemStyles>
-                ))}
-            </GridStyles>
+            <Masonry items={quickFormatting} columnWidth={300} render={BasicCard} />
         </PageStyles>
     );
 };

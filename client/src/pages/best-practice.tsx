@@ -1,15 +1,27 @@
 import { useEffect } from 'react';
-import { useTransition } from 'react-spring';
 
 import { addBestPracticeToState } from '@/components/context/actions';
 import { Dispatch, State } from '@/components/context/context';
-import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
-import { springValues } from './punctuation';
+import { GridItemStyles, PageStyles } from '@/components/styles/CardPageStyles';
+import { Masonry } from 'masonic';
+import { BulletPoints } from '@/models/content';
+
+const LargeCard = ({ data }: { data: BulletPoints }) => (
+    <GridItemStyles key={data.title}>
+        <dt>{data.title}</dt>
+        <div>
+            {data.value.map((val: string) => (
+                <dd key={val} className="paragraphs">
+                    {val}
+                </dd>
+            ))}
+        </div>
+    </GridItemStyles>
+);
 
 const BestPractice = () => {
     const dispatch = Dispatch();
     const { bestPractice } = State();
-    const transition = useTransition(bestPractice, springValues);
 
     useEffect(() => {
         if (dispatch) {
@@ -19,20 +31,7 @@ const BestPractice = () => {
 
     return (
         <PageStyles>
-            <GridStyles page="best-practice">
-                {transition((animation, item) => (
-                    <GridItemStyles style={animation} key={item.title}>
-                        <dt>{item.title}</dt>
-                        <div>
-                            {item.value.map((val) => (
-                                <dd key={val} className="paragraphs">
-                                    {val}
-                                </dd>
-                            ))}
-                        </div>
-                    </GridItemStyles>
-                ))}
-            </GridStyles>
+            <Masonry items={bestPractice} columnWidth={500} render={LargeCard} />
         </PageStyles>
     );
 };
