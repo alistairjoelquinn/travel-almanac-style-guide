@@ -5,20 +5,20 @@ export const PageStyles = styled.div`
     padding: 0 2rem;
 `;
 
-// interface GridProps {
-//     page: string;
-// }
+interface GridProps {
+    page: string;
+}
 
-// export const GridStyles = styled.div<GridProps>`
-//     display: grid;
-//     align-items: center;
-//     grid-template-columns: ${(p) =>
-//         p.page === 'best-practice'
-//             ? '1fr'
-//             : p.page === 'common-words'
-//             ? 'repeat(auto-fill, minmax(300px, 1fr))'
-//             : 'repeat(auto-fill, minmax(400px, 1fr))'};
-// `;
+export const GridStyles = styled.div<GridProps>`
+    display: grid;
+    align-items: center;
+    grid-template-columns: ${(p) =>
+        p.page === 'best-practice'
+            ? '1fr'
+            : p.page === 'common-words'
+            ? 'repeat(auto-fill, minmax(300px, 1fr))'
+            : 'repeat(auto-fill, minmax(400px, 1fr))'};
+`;
 
 export const GridItemStyles = styled(animated.dl)`
     border: 1px solid black;
