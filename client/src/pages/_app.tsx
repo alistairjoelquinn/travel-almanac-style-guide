@@ -5,6 +5,7 @@ import GlobalStyles from '@/components/styles/GlobalStyles';
 import Typography from '@/components/styles/Typography';
 import Page from '@/components/Page';
 import { StateProvider } from '@/components/context/context';
+import '@/components/styles/font.css';
 
 const App = (props: AppProps) => {
     const transitionItems = [

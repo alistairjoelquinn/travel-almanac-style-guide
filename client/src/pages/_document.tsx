@@ -30,7 +30,10 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html lang="en-UK">
-                <Head />
+                <Head>
+                    <link rel="preload" href="/minion-pro-bold.ttf" as="font" type="font/ttf" crossOrigin="" />
+                    <link rel="preload" href="/minion-pro-condensed.ttf" as="font" type="font/ttf" crossOrigin="" />
+                </Head>
                 <body>
                     <Main />
                     <NextScript />

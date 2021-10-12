@@ -17,18 +17,6 @@ const Typography = createGlobalStyle`
         font-weight: normal;
         margin: 0;
     }
-    @font-face {
-        font-family: 'MinionBold';
-        src: url('/minion-pro-bold.ttf') format('truetype');
-        font-weight: normal;
-        font-display: auto;
-    }
-    @font-face {
-        font-family: 'Minion';
-        src: url('/minion-pro-condensed.ttf') format('truetype');
-        font-weight: normal;
-        font-display: auto;
-    }
 `;
 
 export default Typography;
