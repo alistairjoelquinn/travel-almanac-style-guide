@@ -11,7 +11,7 @@ interface GridProps {
 
 export const GridStyles = styled.div<GridProps>`
     display: grid;
-    align-items: center;
+    align-items: start;
     grid-template-columns: ${(p) =>
         p.page === 'best-practice'
             ? '1fr'

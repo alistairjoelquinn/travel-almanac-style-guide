@@ -21,13 +21,13 @@ const Typography = createGlobalStyle`
         font-family: 'MinionBold';
         src: url('/minion-pro-bold.ttf') format('truetype');
         font-weight: normal;
-        font-display: swap;
+        font-display: auto;
     }
     @font-face {
         font-family: 'Minion';
         src: url('/minion-pro-condensed.ttf') format('truetype');
         font-weight: normal;
-        font-display: swap;
+        font-display: auto;
     }
 `;
 
