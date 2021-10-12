@@ -3,11 +3,11 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import { Masonry } from 'masonic';
 
-import { GridItemStyles, GridStyles, PageStyles } from '@/components/styles/CardPageStyles';
+import { GridItemStyles, PageStyles } from '@/components/styles/CardPageStyles';
 import { Dispatch, State } from '@/components/context/context';
 import { addCommonWordsToState } from '@/components/context/actions';
 import alphabet from '@/lib/alphabet';
-import { StandardItem, Words } from '@/components/context/models';
+import { Words } from '@/components/context/models';
 
 interface StyleProps {
     indexVal: number | string;
@@ -33,18 +33,18 @@ const LetterSelectStyles = styled.div<StyleProps>`
     }
 `;
 
+export const Card = ({ data }: { data: Words }) => (
+    <GridItemStyles key={data.title}>
+        <dt>{data.title}</dt>
+        {data.value && <dd>{data.value}</dd>}
+    </GridItemStyles>
+);
+
 const Home = () => {
     const [letter, setLetter] = useState(['A', 1]);
     const dispatch = Dispatch();
     const { commonWords } = State();
     const displayWords = commonWords.filter((word) => word.category === letter[0]);
-
-    const Card = ({ data }: { data: Words }) => (
-        <GridItemStyles key={data.title}>
-            <dt>{data.title}</dt>
-            {data.value && <dd>{data.value}</dd>}
-        </GridItemStyles>
-    );
 
     useEffect(() => {
         if (dispatch) {
