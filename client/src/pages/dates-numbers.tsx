@@ -29,7 +29,7 @@ const DatesNumbers = () => {
 
     return (
         <PageStyles>
-            <Masonry items={datesNumbers} columnWidth={300} render={DottedCard} />
+            <Masonry items={datesNumbers} columnWidth={400} render={DottedCard} />
         </PageStyles>
     );
 };
