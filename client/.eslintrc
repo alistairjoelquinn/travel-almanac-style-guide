@@ -21,7 +21,6 @@
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
     "react/no-unused-prop-types": "off",
-    "react/no-danger": "off",
     "react/no-array-index-key": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",

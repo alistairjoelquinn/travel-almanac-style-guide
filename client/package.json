@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "html-react-parser": "^1.4.0",
     "masonic": "^3.4.1",
     "next": "^10.2.2",
     "react": "17.0.2",

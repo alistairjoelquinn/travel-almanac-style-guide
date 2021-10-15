@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import parse from 'html-react-parser';
 
 import toneOfVoice from '@/../content/tone-of-voice-string';
 
@@ -42,11 +43,7 @@ const ToneOfVoiceStyles = styled.div`
 const ToneOfVoice = () => {
     console.log('tone of voice');
 
-    return (
-        <ToneOfVoiceStyles>
-            <div dangerouslySetInnerHTML={{ __html: toneOfVoice }} />
-        </ToneOfVoiceStyles>
-    );
+    return <ToneOfVoiceStyles>{parse(toneOfVoice)}</ToneOfVoiceStyles>;
 };
 
 export default ToneOfVoice;
