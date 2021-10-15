@@ -1,10 +1,31 @@
 import styled from 'styled-components';
 import parse from 'html-react-parser';
 
-import toneOfVoice from '@/../content/tone-of-voice-string';
+import toneArray from '@/../content/tone-array';
+
+const ToneGrid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+`;
+
+const ToneItemStyles = styled.div`
+    border: 1px solid black;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem;
+    margin: 2rem 4rem;
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+`;
 
 const ToneOfVoiceStyles = styled.div`
-    padding: 1vh 10vw;
+    padding: 1vh 5vw;
     h3 {
         margin: 1rem 0;
         font-weight: bold;
@@ -43,7 +64,15 @@ const ToneOfVoiceStyles = styled.div`
 const ToneOfVoice = () => {
     console.log('tone of voice');
 
-    return <ToneOfVoiceStyles>{parse(toneOfVoice)}</ToneOfVoiceStyles>;
+    return (
+        <ToneOfVoiceStyles>
+            <ToneGrid>
+                {toneArray.map((item, i) => (
+                    <ToneItemStyles key={i}>{parse(item)}</ToneItemStyles>
+                ))}
+            </ToneGrid>
+        </ToneOfVoiceStyles>
+    );
 };
 
 export default ToneOfVoice;
