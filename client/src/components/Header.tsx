@@ -16,13 +16,16 @@ const HeaderStyles = styled.nav`
     background-color: #f0f0f0;
     position: relative;
     h5 {
-        font-family: MinionBold;
+        font-family: MinionBoldCond;
         height: 5rem;
         color: black;
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;
         padding-top: 0.3rem;
         font-size: 4rem;
+        font-weight: bold;
+    }
+    p {
+        font-size: 2rem;
+        font-weight: bold;
     }
 `;
 
@@ -41,7 +44,7 @@ const NavStyles = styled.nav<NavProps>`
         width: 100%;
         height: 2.5rem;
         margin-top: 0.3rem;
-        font-family: MinionBold;
+        font-family: MinionBoldCond;
         color: black;
         display: flex;
         justify-content: center;
@@ -69,7 +72,8 @@ const Header = ({ setUserInput }: { setUserInput: ReactDispatch<SetStateAction<s
     return (
         <>
             <HeaderStyles>
-                <h5>THE TRAVEL ALMANAC STYLE GUIDE</h5>
+                <h5>THE TRAVEL ALMANAC</h5>
+                <p>STYLE GUIDE</p>
             </HeaderStyles>
             <NavStyles className="page-nav" searching={searching}>
                 {paths.map((path) => (

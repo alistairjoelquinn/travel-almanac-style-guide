@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'MinionBold';
-    src: url('/minion-pro-bold.ttf') format('truetype');
+    font-family: 'Minion';
+    src: url('/minion-pro-condensed.ttf') format('truetype');
     font-weight: normal;
     font-display: auto;
 }
 @font-face {
-    font-family: 'Minion';
-    src: url('/minion-pro-condensed.ttf') format('truetype');
+    font-family: 'MinionBoldCond';
+    src: url('/minion-pro-bold-condensed.ttf') format('otf');
     font-weight: normal;
     font-display: auto;
 }
