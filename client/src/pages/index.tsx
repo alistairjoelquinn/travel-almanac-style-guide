@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import { useWindowSize } from '@react-hook/window-size';
 
 import { PageStyles } from '@/components/styles/CardPageStyles';
 import { Dispatch, State } from '@/components/context/context';
 import { addCommonWordsToState } from '@/components/context/actions';
 import alphabet from '@/lib/alphabet';
-import { Masonry } from 'masonic';
+import { useContainerPosition, useMasonry, usePositioner, useResizeObserver, useScroller } from 'masonic';
+import { Words } from '@/components/context/models';
 import { BasicCard } from './punctuation';
 
 interface StyleProps {
@@ -35,14 +37,20 @@ const LetterSelectStyles = styled.div<StyleProps>`
 
 const Home = () => {
     const [letter, setLetter] = useState(['A', 1]);
+    const [words, setWords] = useState<Words[]>([]);
     const dispatch = Dispatch();
     const { commonWords } = State();
-    const displayWords = commonWords.filter((word) => word.category === letter[0]);
 
-    const getGrid = () => {
-        const wordyword = displayWords;
-        return <Masonry items={wordyword} columnWidth={300} render={BasicCard} />;
-    };
+    const containerRef = useRef(null);
+    const [windowWidth, height] = useWindowSize();
+    const { offset, width } = useContainerPosition(containerRef, [windowWidth, height]);
+    const { scrollTop, isScrolling } = useScroller(offset);
+    const positioner = usePositioner({ width, columnGutter: 8, columnWidth: 300 }, [words.length]);
+    const resizeObserver = useResizeObserver(positioner);
+
+    useEffect(() => {
+        setWords(commonWords.filter((word) => word.category === letter[0]));
+    }, [letter, commonWords]);
 
     useEffect(() => {
         if (dispatch) {
@@ -63,7 +71,19 @@ const Home = () => {
                     </span>
                 ))}
             </LetterSelectStyles>
-            <PageStyles>{getGrid()}</PageStyles>
+            <PageStyles>
+                {useMasonry({
+                    positioner,
+                    scrollTop,
+                    isScrolling,
+                    height,
+                    containerRef,
+                    items: words,
+                    overscanBy: 5,
+                    resizeObserver,
+                    render: BasicCard,
+                })}
+            </PageStyles>
         </>
     );
 };

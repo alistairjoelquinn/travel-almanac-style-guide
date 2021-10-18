@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-hook/window-size": "^3.0.7",
     "html-react-parser": "^1.4.0",
     "masonic": "^3.4.1",
     "next": "^10.2.2",
