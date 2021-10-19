@@ -16,12 +16,14 @@ const HeaderStyles = styled.nav`
     background-color: #f0f0f0;
     position: relative;
     h5 {
-        font-family: MinionBoldCond;
-        height: 5rem;
+        font-family: MinionBold;
         color: black;
-        padding-top: 0.3rem;
-        font-size: 4rem;
-        font-weight: bold;
+        padding: 1rem;
+        padding-bottom: 0;
+        font-size: 5rem;
+        border-top: 1.5px solid black;
+        border-bottom: 1.5px solid black;
+        margin-bottom: 0.5rem;
     }
     p {
         font-size: 2rem;
@@ -44,7 +46,7 @@ const NavStyles = styled.nav<NavProps>`
         width: 100%;
         height: 2.5rem;
         margin-top: 0.3rem;
-        font-family: MinionBoldCond;
+        font-family: MinionBold;
         color: black;
         display: flex;
         justify-content: center;
