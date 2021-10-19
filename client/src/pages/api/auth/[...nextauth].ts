@@ -10,12 +10,6 @@ export default NextAuth({
                 password: { label: 'Password', type: 'password' },
             },
             async authorize(credentials) {
-                console.log('credentials: ', credentials);
-                console.log(
-                    'process.env.NEXT_AUTH_USERNAME, process.env.NEXT_AUTH_PASSWORD: ',
-                    process.env.NEXT_AUTH_USERNAME,
-                    process.env.NEXT_AUTH_PASSWORD,
-                );
                 if (
                     credentials.username === process.env.NEXT_AUTH_USERNAME &&
                     credentials.password === process.env.NEXT_AUTH_PASSWORD
