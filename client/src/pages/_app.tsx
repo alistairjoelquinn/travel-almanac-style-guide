@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { useTransition, animated } from 'react-spring';
+import { Provider } from 'next-auth/client';
 
 import GlobalStyles from '@/components/styles/GlobalStyles';
 import Typography from '@/components/styles/Typography';
@@ -27,15 +28,17 @@ const App = (props: AppProps) => {
         <>
             <GlobalStyles />
             <Typography />
-            <StateProvider>
-                <Page>
-                    {transition((styles, { Component, pageProps }) => (
-                        <animated.div style={styles}>
-                            <Component {...pageProps} />
-                        </animated.div>
-                    ))}
-                </Page>
-            </StateProvider>
+            <Provider session={props.pageProps.session}>
+                <StateProvider>
+                    <Page>
+                        {transition((styles, { Component, pageProps }) => (
+                            <animated.div style={styles}>
+                                <Component {...pageProps} />
+                            </animated.div>
+                        ))}
+                    </Page>
+                </StateProvider>
+            </Provider>
         </>
     );
 };
