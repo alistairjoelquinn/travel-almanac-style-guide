@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { signIn, useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/client';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 import Header from '@/components/Header';
 import { State } from '@/components/context/context';
@@ -38,6 +39,7 @@ const DotStyles = styled.div`
 
 const Page: React.FC = ({ children: IntendedResult }) => {
     const [session, loading] = useSession();
+    const router = useRouter();
     console.log('session: ', session);
 
     const { searching } = State();
@@ -52,19 +54,23 @@ const Page: React.FC = ({ children: IntendedResult }) => {
     }
 
     if (!session) {
-        signIn();
+        router.push('/api/auth/signin');
     }
 
     return (
-        <main style={mainStyles}>
-            <Header setUserInput={setUserInput} />
-            <SearchContainer
-                searching={searching}
-                IntendedResult={IntendedResult}
-                userInput={userInput}
-                setUserInput={setUserInput}
-            />
-        </main>
+        <>
+            {session && (
+                <main style={mainStyles}>
+                    <Header setUserInput={setUserInput} />
+                    <SearchContainer
+                        searching={searching}
+                        IntendedResult={IntendedResult}
+                        userInput={userInput}
+                        setUserInput={setUserInput}
+                    />
+                </main>
+            )}
+        </>
     );
 };
 
