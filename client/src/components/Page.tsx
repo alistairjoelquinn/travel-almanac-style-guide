@@ -40,7 +40,6 @@ const DotStyles = styled.div`
 const Page: React.FC = ({ children: IntendedResult }) => {
     const [session, loading] = useSession();
     const router = useRouter();
-    console.log('session: ', session);
 
     const { searching } = State();
     const [userInput, setUserInput] = useState('');
