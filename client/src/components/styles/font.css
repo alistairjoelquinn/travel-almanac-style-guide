@@ -5,12 +5,6 @@
     font-display: auto;
 }
 @font-face {
-    font-family: 'MinionBoldCond';
-    src: url('/minion-pro-bold-condensed.otf') format('otf');
-    font-weight: normal;
-    font-display: auto;
-}
-@font-face {
     font-family: 'MinionBold';
     src: url('/minion-pro-bold.ttf') format('truetype');
     font-weight: normal;

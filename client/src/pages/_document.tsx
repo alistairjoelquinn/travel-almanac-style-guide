@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
             <Html lang="en-UK">
                 <Head>
                     <link rel="preload" href="/minion-pro-condensed.ttf" as="font" type="font/ttf" crossOrigin="" />
-                    <link rel="preload" href="/minion-pro-bold.ttf" as="font" type="font/otf" crossOrigin="" />
+                    <link rel="preload" href="/minion-pro-bold.ttf" as="font" type="font/ttf" crossOrigin="" />
                 </Head>
                 <body>
                     <Main />
