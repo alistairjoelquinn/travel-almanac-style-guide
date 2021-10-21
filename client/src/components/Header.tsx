@@ -48,7 +48,6 @@ const NavStyles = styled.nav<NavProps>`
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     div {
-        width: 100%;
         height: 2.5rem;
         margin-top: 0.3rem;
         font-family: MinionBold;
@@ -69,7 +68,7 @@ const NavStyles = styled.nav<NavProps>`
             }
         }
     }
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
         flex-direction: column;
     }
 `;
