@@ -18,6 +18,11 @@ export const GridStyles = styled.div<GridProps>`
             : p.page === 'common-words'
             ? 'repeat(auto-fill, minmax(300px, 1fr))'
             : 'repeat(auto-fill, minmax(400px, 1fr))'};
+    @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const GridItemStyles = styled(animated.dl)`
