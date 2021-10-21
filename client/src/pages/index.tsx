@@ -34,6 +34,7 @@ const LetterSelectStyles = styled.div<StyleProps>`
     }
     @media (max-width: 700px) {
         width: 15%;
+        height: auto;
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 10px;
