@@ -69,6 +69,9 @@ const NavStyles = styled.nav<NavProps>`
             }
         }
     }
+    @media (max-width: 700px) {
+        flex-direction: column;
+    }
 `;
 
 const Header = ({ setUserInput }: { setUserInput: ReactDispatch<SetStateAction<string>> }) => {
