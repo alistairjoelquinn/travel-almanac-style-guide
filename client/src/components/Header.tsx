@@ -34,7 +34,7 @@ const HeaderStyles = styled.nav`
             font-size: 3rem;
         }
     }
-    @media (orientation: landscape) {
+    @media (max-width: 1400px) and (max-height: 500px) and (orientation: landscape) {
         height: 40vh;
     }
 `;
