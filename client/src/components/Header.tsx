@@ -58,6 +58,7 @@ const NavStyles = styled.nav<NavProps>`
         button {
             outline: none;
             border: none;
+            color: black;
             cursor: pointer;
             height: 1.6rem;
             padding: 0;
