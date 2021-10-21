@@ -3,7 +3,6 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import { useWindowSize } from '@react-hook/window-size';
 
-import { PageStyles } from '@/components/styles/CardPageStyles';
 import { Dispatch, State } from '@/components/context/context';
 import { addCommonWordsToState } from '@/components/context/actions';
 import alphabet from '@/lib/alphabet';
@@ -32,6 +31,30 @@ const LetterSelectStyles = styled.div<StyleProps>`
         &:nth-child(${(p) => p.indexVal}) {
             --d: 100%;
         }
+    }
+    @media (max-width: 700px) {
+        width: 15%;
+        flex-direction: column;
+        justify-content: flex-start;
+        span {
+            margin-bottom: 15px;
+        }
+    }
+`;
+
+const CommonWordsContainerStyles = styled.main`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @media (max-width: 700px) {
+        flex-direction: row;
+    }
+`;
+
+const CommonWordsStyles = styled.div`
+    padding: 0 2rem;
+    @media (max-width: 700px) {
+        width: 85%;
     }
 `;
 
@@ -64,26 +87,28 @@ const Home = () => {
                 <title>Travel Almanac Style Guide</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <LetterSelectStyles indexVal={letter[1]}>
-                {alphabet.map((alph, i) => (
-                    <span key={alph} onClick={() => setLetter([alph, i + 1])}>
-                        {alph}
-                    </span>
-                ))}
-            </LetterSelectStyles>
-            <PageStyles>
-                {useMasonry({
-                    positioner,
-                    scrollTop,
-                    isScrolling,
-                    height,
-                    containerRef,
-                    items: words,
-                    overscanBy: 5,
-                    resizeObserver,
-                    render: BasicCard,
-                })}
-            </PageStyles>
+            <CommonWordsContainerStyles>
+                <LetterSelectStyles indexVal={letter[1]}>
+                    {alphabet.map((alph, i) => (
+                        <span key={alph} onClick={() => setLetter([alph, i + 1])}>
+                            {alph}
+                        </span>
+                    ))}
+                </LetterSelectStyles>
+                <CommonWordsStyles>
+                    {useMasonry({
+                        positioner,
+                        scrollTop,
+                        isScrolling,
+                        height,
+                        containerRef,
+                        items: words,
+                        overscanBy: 5,
+                        resizeObserver,
+                        render: BasicCard,
+                    })}
+                </CommonWordsStyles>
+            </CommonWordsContainerStyles>
         </>
     );
 };
