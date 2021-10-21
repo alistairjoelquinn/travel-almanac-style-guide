@@ -34,6 +34,9 @@ const HeaderStyles = styled.nav`
             font-size: 3rem;
         }
     }
+    @media (orientation: landscape) {
+        height: 40vh;
+    }
 `;
 
 interface NavProps {
