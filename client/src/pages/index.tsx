@@ -36,6 +36,8 @@ const LetterSelectStyles = styled.div<StyleProps>`
         width: 15%;
         flex-direction: column;
         justify-content: flex-start;
+        padding-top: 10px;
+        margin-left: 10px;
         span {
             margin-bottom: 15px;
         }
