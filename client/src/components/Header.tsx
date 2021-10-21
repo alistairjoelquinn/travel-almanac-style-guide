@@ -29,6 +29,11 @@ const HeaderStyles = styled.nav`
         font-size: 2rem;
         font-weight: bold;
     }
+    @media (max-width: 600px) {
+        h5 {
+            font-size: 3rem;
+        }
+    }
 `;
 
 interface NavProps {
