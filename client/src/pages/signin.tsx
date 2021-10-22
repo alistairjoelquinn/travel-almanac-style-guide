@@ -17,17 +17,46 @@ const LoginStyles = styled.section`
     form {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
+        button {
+            width: 50px;
+            background-color: #fff;
+            border-radius: 1rem;
+            border: 1px solid black;
+            height: 3rem;
+            width: 6rem;
+            &:hover {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+`;
+
+const InputField = styled.input`
+    width: 25vw;
+    padding: 1rem;
+    height: 4rem;
+    line-height: 2rem;
+    font-size: 2rem;
+    vertical-align: middle;
+    border-radius: 1rem;
+    border: 1px solid black;
+    &:-webkit-input-placeholder,
+    &:-ms-input-placeholder {
+        line-height: 2rem;
+        font-size: 2rem;
+        vertical-align: middle;
     }
 `;
 
 const signin = ({ csrfToken: csrf }: Props) => (
     <LoginStyles>
         <div>
-            <form method="POST" action="/api/auth/signin/credentials">
+            <form method="POST" action="/api/auth/callback/credentials">
                 <input type="hidden" name="csrfToken" defaultValue={csrf} />
-                <input type="text" name="username" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
+                <InputField type="text" name="username" placeholder="Username" />
+                <InputField type="password" name="password" placeholder="Password" />
                 <button type="submit">Login</button>
             </form>
         </div>
