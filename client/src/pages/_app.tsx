@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import { useTransition, animated } from 'react-spring';
-import { Provider } from 'next-auth/client';
+import { Provider, useSession } from 'next-auth/client';
+import { useRouter } from 'next/router';
 
 import GlobalStyles from '@/components/styles/GlobalStyles';
 import Typography from '@/components/styles/Typography';
@@ -9,6 +10,9 @@ import { StateProvider } from '@/components/context/context';
 import '@/components/styles/font.css';
 
 const App = (props: AppProps) => {
+    const [session] = useSession();
+    const router = useRouter();
+
     const transitionItems = [
         {
             id: props.router.route,
@@ -23,6 +27,13 @@ const App = (props: AppProps) => {
         leave: { opacity: 0 },
         keys: (item) => item.id,
     });
+
+    if (!session && router.pathname !== '/signin') {
+        if (typeof window !== 'undefined') {
+            window.location.replace('/signin');
+            return null;
+        }
+    }
 
     return (
         <>

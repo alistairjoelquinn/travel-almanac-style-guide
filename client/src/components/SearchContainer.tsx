@@ -39,13 +39,6 @@ const DotStyles = styled.div`
 
 const SearchContainer = ({ searching, userInput, setUserInput, IntendedResult }: Props) => {
     const [session, loading] = useSession();
-    const router = useRouter();
-
-    console.log('router.pathname: ', router.pathname);
-
-    if (router.pathname === '/signin') {
-        return <>{IntendedResult}</>;
-    }
 
     return (
         <>
@@ -55,7 +48,7 @@ const SearchContainer = ({ searching, userInput, setUserInput, IntendedResult }:
                 </DotStyles>
             ) : (
                 <div>
-                    <SearchBar userInput={userInput} setUserInput={setUserInput} />
+                    <div>{session && <SearchBar userInput={userInput} setUserInput={setUserInput} />}</div>
                     {searching ? <SearchResults /> : IntendedResult}
                 </div>
             )}

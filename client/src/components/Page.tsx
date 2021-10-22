@@ -15,17 +15,15 @@ const Page: React.FC = ({ children: IntendedResult }) => {
     const [userInput, setUserInput] = useState('');
 
     return (
-        <>
-            <main style={mainStyles}>
-                <Header setUserInput={setUserInput} />
-                <SearchContainer
-                    searching={searching}
-                    IntendedResult={IntendedResult}
-                    userInput={userInput}
-                    setUserInput={setUserInput}
-                />
-            </main>
-        </>
+        <div style={mainStyles}>
+            <Header setUserInput={setUserInput} />
+            <SearchContainer
+                searching={searching}
+                IntendedResult={IntendedResult}
+                userInput={userInput}
+                setUserInput={setUserInput}
+            />
+        </div>
     );
 };
 
