@@ -2,6 +2,7 @@ import { Dispatch as ReactDispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/client';
 
 import paths from '../../content/paths.json';
 import { Dispatch, State } from './context/context';
@@ -78,6 +79,7 @@ const NavStyles = styled.nav<NavProps>`
 `;
 
 const Header = ({ setUserInput }: { setUserInput: ReactDispatch<SetStateAction<string>> }) => {
+    const [session] = useSession();
     const router = useRouter();
     const { searching } = State();
     const dispatch = Dispatch();
@@ -88,23 +90,25 @@ const Header = ({ setUserInput }: { setUserInput: ReactDispatch<SetStateAction<s
                 <h5>THE TRAVEL ALMANAC</h5>
                 <p>STYLE GUIDE</p>
             </HeaderStyles>
-            <NavStyles className="page-nav" searching={searching}>
-                {paths.map((path) => (
-                    <div
-                        key={path.name}
-                        onClick={() => {
-                            userSearchEnd(dispatch);
-                            setUserInput('');
-                        }}
-                    >
-                        <Link href={path.path} passHref>
-                            <button type="button" className={router.pathname === path.path ? 'underline' : ''}>
-                                {path.name}
-                            </button>
-                        </Link>
-                    </div>
-                ))}
-            </NavStyles>
+            {session && (
+                <NavStyles className="page-nav" searching={searching}>
+                    {paths.map((path) => (
+                        <div
+                            key={path.name}
+                            onClick={() => {
+                                userSearchEnd(dispatch);
+                                setUserInput('');
+                            }}
+                        >
+                            <Link href={path.path} passHref>
+                                <button type="button" className={router.pathname === path.path ? 'underline' : ''}>
+                                    {path.name}
+                                </button>
+                            </Link>
+                        </div>
+                    ))}
+                </NavStyles>
+            )}
         </>
     );
 };
