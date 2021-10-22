@@ -4,8 +4,9 @@ import { ClientSafeProvider } from 'next-auth/client';
 import styled from 'styled-components';
 
 interface Props {
-    session?: Session | null;
-    providers?: Record<string, ClientSafeProvider> | null;
+    session?: Session;
+    providers?: Record<string, ClientSafeProvider>;
+    csrfToken?: string;
 }
 
 const LoginStyles = styled.main`
@@ -16,13 +17,16 @@ const LoginStyles = styled.main`
     justify-content: center;
 `;
 
-const signin = ({ session, providers: signInProviders }: Props) => {
+const signin = ({ session, providers: signInProviders, csrfToken }: Props) => {
     console.log('loggy');
     return (
         <LoginStyles>
             <div>
-                <input type="text" name="username" />
-                <input type="password" name="password" />
+                <form method="POST" action="/api/auth/signin/credentials">
+                    <input type="hidden" name="csrfToken" defaultValue={csrfToken} />
+                    <input type="text" name="username" />
+                    <input type="password" name="password" />
+                </form>
             </div>
         </LoginStyles>
     );

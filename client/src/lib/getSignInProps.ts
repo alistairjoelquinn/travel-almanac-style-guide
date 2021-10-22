@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import { providers, getSession } from 'next-auth/client';
+import { providers, getSession, csrfToken } from 'next-auth/client';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const { req, res } = context;
@@ -14,6 +14,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         props: {
             session: null,
             providers: await providers(),
+            csrfToken: await csrfToken(context),
         },
     };
 };
