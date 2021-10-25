@@ -30,11 +30,6 @@ const LoginStyles = styled.section`
             }
         }
     }
-    @media (max-width: 600px) {
-        button {
-            width: 50px;
-        }
-    }
 `;
 
 const InputField = styled.input`
