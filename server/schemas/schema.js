@@ -5,10 +5,11 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import commonWords from './common-words';
 import punctuation from './punctuation';
 import datesNumbers from './dates-numbers';
+import bestPractise from './best-practise';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    commonWords, punctuation, datesNumbers
+    commonWords, punctuation, datesNumbers, bestPractise
   ]),
 });
