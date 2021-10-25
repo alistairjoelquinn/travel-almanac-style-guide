@@ -20,7 +20,6 @@ const LoginStyles = styled.section`
         align-items: center;
         gap: 1rem;
         button {
-            width: 50px;
             background-color: #fff;
             border-radius: 1rem;
             border: 1px solid black;
@@ -29,6 +28,11 @@ const LoginStyles = styled.section`
             &:hover {
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             }
+        }
+    }
+    @media (max-width: 600px) {
+        button {
+            width: 50px;
         }
     }
 `;
@@ -47,6 +51,12 @@ const InputField = styled.input`
         line-height: 2rem;
         font-size: 2rem;
         vertical-align: middle;
+    }
+    @media (max-width: 1000px) {
+        width: 40vw;
+    }
+    @media (max-width: 600px) {
+        width: 60vw;
     }
 `;
 
