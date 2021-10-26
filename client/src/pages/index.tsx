@@ -84,6 +84,18 @@ const Home = () => {
         }
     }, [dispatch]);
 
+    const displayCards = useMasonry({
+        positioner,
+        scrollTop,
+        isScrolling,
+        height,
+        containerRef,
+        items: words,
+        overscanBy: 5,
+        resizeObserver,
+        render: BasicCard,
+    });
+
     return (
         <>
             <Head>
@@ -98,19 +110,7 @@ const Home = () => {
                         </span>
                     ))}
                 </LetterSelectStyles>
-                <CommonWordsStyles>
-                    {useMasonry({
-                        positioner,
-                        scrollTop,
-                        isScrolling,
-                        height,
-                        containerRef,
-                        items: words,
-                        overscanBy: 5,
-                        resizeObserver,
-                        render: BasicCard,
-                    })}
-                </CommonWordsStyles>
+                <CommonWordsStyles>{displayCards}</CommonWordsStyles>
             </CommonWordsContainerStyles>
         </>
     );
