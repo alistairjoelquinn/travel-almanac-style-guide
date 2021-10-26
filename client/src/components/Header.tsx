@@ -19,9 +19,9 @@ const HeaderStyles = styled.nav`
     h5 {
         font-family: MinionBold;
         color: black;
-        padding: 1rem;
-        padding-bottom: 0;
+        height: 5.3rem;
         font-size: 5rem;
+        padding-top: 3px;
         border-top: 1.5px solid black;
         border-bottom: 1.5px solid black;
         margin-bottom: 0.5rem;
