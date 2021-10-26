@@ -13,7 +13,6 @@ export const addCommonWordsToState = async (dispatch: React.Dispatch<Action>) =>
                     title
                     value
                     category
-                    _id
                 }
             }
         `,
@@ -34,7 +33,6 @@ export const addPunctuationToState = async (dispatch: React.Dispatch<Action>) =>
         query: gql`
             query {
                 allPunctuation {
-                    _id
                     title
                     value
                 }
@@ -51,19 +49,45 @@ export const addPunctuationToState = async (dispatch: React.Dispatch<Action>) =>
 };
 
 export const addDatesNumbersToState = async (dispatch: React.Dispatch<Action>) => {
+    const {
+        data: { allDatesNumbers },
+    } = await client.query({
+        query: gql`
+            query {
+                allDatesNumbers {
+                    title
+                    value
+                }
+            }
+        `,
+    });
+
     dispatch({
         type: 'ADD_DATES_NUMBERS',
         payload: {
-            datesNumbers,
+            datesNumbers: allDatesNumbers,
         },
     });
 };
 
 export const addBestPracticeToState = async (dispatch: React.Dispatch<Action>) => {
+    const {
+        data: { allBestPractise },
+    } = await client.query({
+        query: gql`
+            query {
+                allBestPractise {
+                    title
+                    value
+                }
+            }
+        `,
+    });
+
     dispatch({
         type: 'ADD_BEST_PRACTICE',
         payload: {
-            bestPractice,
+            bestPractice: allBestPractise,
         },
     });
 };
