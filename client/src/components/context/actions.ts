@@ -1,16 +1,33 @@
+import { gql } from '@apollo/client';
+
+import { client } from '@/pages/_app';
 import { Action } from './models';
 
-import words from '../../../content/common-words.json';
 import punctuation from '../../../content/punctuation.json';
 import datesNumbers from '../../../content/dates-numbers.json';
 import bestPractice from '../../../content/best-practice.json';
 import quickFormatting from '../../../content/quick-formatting.json';
 
 export const addCommonWordsToState = async (dispatch: React.Dispatch<Action>) => {
+    const {
+        data: { allCommonWords },
+    } = await client.query({
+        query: gql`
+            query {
+                allCommonWords {
+                    title
+                    value
+                    category
+                    _id
+                }
+            }
+        `,
+    });
+
     dispatch({
         type: 'ADD_COMMON_WORDS',
         payload: {
-            words,
+            words: allCommonWords,
         },
     });
 };

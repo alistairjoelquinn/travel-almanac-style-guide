@@ -57,6 +57,7 @@
         "no-console": "off",
         "no-nested-ternary": "off",
         "no-plusplus": "off",
+        "import/no-cycle": "off",
         "import/no-anonymous-default-export": "off",
         "jsx-a11y/click-events-have-key-events": "off",
         "jsx-a11y/no-static-element-interactions": "off",

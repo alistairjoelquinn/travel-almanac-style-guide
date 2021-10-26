@@ -75,7 +75,8 @@ const Home = () => {
     const resizeObserver = useResizeObserver(positioner);
 
     useEffect(() => {
-        setWords(commonWords.filter((word) => word.category === letter[0]));
+        console.log('changing');
+        setWords(commonWords?.filter((word) => word.category === letter[0]));
     }, [letter, commonWords]);
 
     useEffect(() => {
