@@ -1,12 +1,19 @@
 import type { AppProps } from 'next/app';
 import { useTransition, animated } from 'react-spring';
 import { Provider } from 'next-auth/client';
+import { ApolloProvider } from '@apollo/client/react';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 import GlobalStyles from '@/components/styles/GlobalStyles';
 import Typography from '@/components/styles/Typography';
 import Page from '@/components/Page';
 import { StateProvider } from '@/components/context/context';
 import '@/components/styles/font.css';
+
+export const client = new ApolloClient({
+    uri: process.env.NEXT_PUBLIC_SANITY_URL,
+    cache: new InMemoryCache(),
+});
 
 const App = (props: AppProps) => {
     const transitionItems = [
@@ -29,15 +36,17 @@ const App = (props: AppProps) => {
             <GlobalStyles />
             <Typography />
             <Provider session={props.pageProps.session}>
-                <StateProvider>
-                    <Page>
-                        {transition((styles, { Component, pageProps }) => (
-                            <animated.div style={styles}>
-                                <Component {...pageProps} />
-                            </animated.div>
-                        ))}
-                    </Page>
-                </StateProvider>
+                <ApolloProvider client={client}>
+                    <StateProvider>
+                        <Page>
+                            {transition((styles, { Component, pageProps }) => (
+                                <animated.div style={styles}>
+                                    <Component {...pageProps} />
+                                </animated.div>
+                            ))}
+                        </Page>
+                    </StateProvider>
+                </ApolloProvider>
             </Provider>
         </>
     );
