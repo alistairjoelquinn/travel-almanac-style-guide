@@ -1,4 +1,4 @@
-import { IoCalendarNumberOutline as icon } from 'react-icons/io';
+import { ImListNumbered as icon } from 'react-icons/im';
 
 export default {
     name: 'dates-numbers',

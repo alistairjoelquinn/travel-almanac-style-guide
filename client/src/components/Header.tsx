@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/client';
 
-import paths from '../../content/paths.json';
+import paths from '../lib/paths';
 import { Dispatch, State } from './context/context';
 import { userSearchEnd } from './context/actions';
 
