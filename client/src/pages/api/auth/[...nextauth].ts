@@ -14,10 +14,8 @@ export default NextAuth({
                     credentials.username === process.env.NEXT_AUTH_USERNAME &&
                     credentials.password === process.env.NEXT_AUTH_PASSWORD
                 ) {
-                    console.log('username, password: ', credentials.username, credentials.password);
                     return {
                         accepted: true,
-                        name: 'BobHarris',
                     };
                 }
                 return null;
