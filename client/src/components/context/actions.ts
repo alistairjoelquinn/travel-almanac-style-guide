@@ -93,10 +93,23 @@ export const addBestPracticeToState = async (dispatch: React.Dispatch<Action>) =
 };
 
 export const addQuickFormattingToState = async (dispatch: React.Dispatch<Action>) => {
+    const {
+        data: { allQuickFormatting },
+    } = await client.query({
+        query: gql`
+            query {
+                allQuickFormatting {
+                    title
+                    value
+                }
+            }
+        `,
+    });
+
     dispatch({
         type: 'ADD_QUICK_FORMATTING',
         payload: {
-            quickFormatting,
+            quickFormatting: allQuickFormatting,
         },
     });
 };

@@ -9,6 +9,7 @@ import { BasicCard } from './punctuation';
 const QuickFormatting = () => {
     const dispatch = Dispatch();
     const { quickFormatting } = State();
+    console.log('quickFormatting: ', quickFormatting);
 
     useEffect(() => {
         if (dispatch) {
