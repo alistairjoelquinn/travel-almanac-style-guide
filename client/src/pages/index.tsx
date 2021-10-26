@@ -2,11 +2,11 @@ import { useEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { useWindowSize } from '@react-hook/window-size';
+import { useContainerPosition, useMasonry, usePositioner, useResizeObserver, useScroller } from 'masonic';
 
 import { Dispatch, State } from '@/components/context/context';
 import { addCommonWordsToState } from '@/components/context/actions';
 import alphabet from '@/lib/alphabet';
-import { useContainerPosition, useMasonry, usePositioner, useResizeObserver, useScroller } from 'masonic';
 import { Words } from '@/components/context/models';
 import { BasicCard } from './punctuation';
 
