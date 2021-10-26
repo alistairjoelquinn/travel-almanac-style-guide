@@ -1,7 +1,16 @@
 import styled from 'styled-components';
 import parse from 'html-react-parser';
+import { useQuery, gql } from '@apollo/client';
+import { HTMLToneOfVoiceTemplate } from '@/models/content';
 
-import toneArray from '@/../content/tone-array';
+const GET_TONE_OF_VOICE_QUERY = gql`
+    query {
+        allToneOfVoice {
+            _id
+            value
+        }
+    }
+`;
 
 const ToneGrid = styled.div`
     display: grid;
@@ -62,13 +71,13 @@ const ToneOfVoiceStyles = styled.div`
 `;
 
 const ToneOfVoice = () => {
-    console.log('tone of voice');
+    const { data } = useQuery(GET_TONE_OF_VOICE_QUERY);
 
     return (
         <ToneOfVoiceStyles>
             <ToneGrid>
-                {toneArray.map((item, i) => (
-                    <ToneItemStyles key={i}>{parse(item)}</ToneItemStyles>
+                {data?.allToneOfVoice?.map((item: HTMLToneOfVoiceTemplate) => (
+                    <ToneItemStyles key={item._id}>{parse(item.value)}</ToneItemStyles>
                 ))}
             </ToneGrid>
         </ToneOfVoiceStyles>
