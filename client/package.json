@@ -9,7 +9,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.16",
     "@react-hook/window-size": "^3.0.7",
+    "graphql": "^15.6.1",
     "html-react-parser": "^1.4.0",
     "masonic": "^3.4.1",
     "next": "^10.2.2",
