@@ -3,11 +3,6 @@ import { gql } from '@apollo/client';
 import { client } from '@/pages/_app';
 import { Action } from './models';
 
-import punctuation from '../../../content/punctuation.json';
-import datesNumbers from '../../../content/dates-numbers.json';
-import bestPractice from '../../../content/best-practice.json';
-import quickFormatting from '../../../content/quick-formatting.json';
-
 export const addCommonWordsToState = async (dispatch: React.Dispatch<Action>) => {
     const {
         data: { allCommonWords },
@@ -33,10 +28,24 @@ export const addCommonWordsToState = async (dispatch: React.Dispatch<Action>) =>
 };
 
 export const addPunctuationToState = async (dispatch: React.Dispatch<Action>) => {
+    const {
+        data: { allPunctuation },
+    } = await client.query({
+        query: gql`
+            query {
+                allPunctuation {
+                    _id
+                    title
+                    value
+                }
+            }
+        `,
+    });
+
     dispatch({
         type: 'ADD_PUNCTUATION',
         payload: {
-            punctuation,
+            punctuation: allPunctuation,
         },
     });
 };
