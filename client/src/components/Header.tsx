@@ -32,6 +32,7 @@ const HeaderStyles = styled.nav`
     }
     @media (max-width: 600px) {
         h5 {
+            height: 3.3rem;
             font-size: 3rem;
         }
     }
