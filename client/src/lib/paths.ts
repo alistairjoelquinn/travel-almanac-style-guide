@@ -8,7 +8,7 @@ export default [
         path: '/punctuation',
     },
     {
-        name: 'Dates & Numbers',
+        name: 'Dates, times & numbers',
         path: '/dates-numbers',
     },
     {
@@ -16,11 +16,11 @@ export default [
         path: '/best-practice',
     },
     {
-        name: 'Quick Formatting',
+        name: 'Quick formatting guide',
         path: '/quick-formatting',
     },
     {
-        name: 'Tone of Voice and Writing Tips',
+        name: 'Tone of Voice & Writing Tips',
         path: '/tone-of-voice',
     },
 ];
