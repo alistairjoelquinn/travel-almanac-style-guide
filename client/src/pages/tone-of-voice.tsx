@@ -8,6 +8,7 @@ const GET_TONE_OF_VOICE_QUERY = gql`
         allToneOfVoice {
             _id
             value
+            order
         }
     }
 `;
@@ -72,13 +73,16 @@ const ToneOfVoiceStyles = styled.div`
 
 const ToneOfVoice = () => {
     const { data } = useQuery(GET_TONE_OF_VOICE_QUERY);
+    const items = data && [...data.allToneOfVoice];
 
     return (
         <ToneOfVoiceStyles>
             <ToneGrid>
-                {data?.allToneOfVoice?.map((item: HTMLToneOfVoiceTemplate) => (
-                    <ToneItemStyles key={item._id}>{parse(item.value)}</ToneItemStyles>
-                ))}
+                {items
+                    ?.sort((a: HTMLToneOfVoiceTemplate, b: HTMLToneOfVoiceTemplate) => a.order - b.order)
+                    .map((item: HTMLToneOfVoiceTemplate) => (
+                        <ToneItemStyles key={item._id}>{parse(item.value)}</ToneItemStyles>
+                    ))}
             </ToneGrid>
         </ToneOfVoiceStyles>
     );

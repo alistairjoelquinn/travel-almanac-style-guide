@@ -11,4 +11,5 @@ export interface BulletPoints {
 export interface HTMLToneOfVoiceTemplate {
     _id: string;
     value: string;
+    order: number;
 }
