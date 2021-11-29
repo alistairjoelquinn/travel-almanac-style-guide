@@ -8,7 +8,7 @@ export default [
         path: '/punctuation',
     },
     {
-        name: 'Dates, Times & Numbers',
+        name: 'Dates, Time & Numbers',
         path: '/dates-numbers',
     },
     {
