@@ -74,7 +74,6 @@ const ToneOfVoiceStyles = styled.div`
 const ToneOfVoice = () => {
     const { data } = useQuery(GET_TONE_OF_VOICE_QUERY);
     const items = data && [...data.allToneOfVoice];
-
     return (
         <ToneOfVoiceStyles>
             <ToneGrid>
