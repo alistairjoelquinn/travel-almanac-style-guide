@@ -20,4 +20,4 @@ Users can [search](https://github.com/alistairjoelquinn/travel-almanac-style-gui
 
 Global state management is being managed with the [React Context API](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/context.tsx) and [useReducer](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/reducer.ts) hook. 
 
-When the application loads, only the data for the requested page is fetched and stored in state. Data fetching for the other pages can happen one of two ways. Either on a page by page basis as the user navigates, or all at once if the user searches the site. This is the only scenario where all data is fetched in order to avoid unnecessary data being requested.
+The CMS has been built with [Sanity.io](https://github.com/sanity-io/sanity) and has a GraphQL API. Client side [data fetching](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/actions.ts) is being done with [Apollo Client](https://github.com/apollographql/apollo-client)
