@@ -14,7 +14,8 @@ The user can navigate between letters of the alphabet to view the different asso
 
 ![Commons Words Page 2](/img/words2.png)
 
-Users can search the site for a specific term and results across all pages will be displayed.
+Users can search the site for a specific term and results across all pages will be displayed with the matching search term highlighted.
 
 ![User Search](/img/search.png)
 
+When the application loads, only the data for the requested page is fetched and stored in state. Data fetching for the other pages can happen one of 2 ways. Either on a page by page basis as the user navigates, or all at once if the user searches the site. This is the only scenario where all data is fetched in order to avoid unnecessarily requesting data.
