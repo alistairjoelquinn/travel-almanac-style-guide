@@ -2,7 +2,7 @@
 
 This is an online style guide for the writers of the [Travel Almanac](https://www.travel-almanac.com/). It can be found [here](https://travel-almanac-style-guide.vercel.app/).
 
-Client side, the application has been built with Nextjs and TypeScript. A user must be logged in to view the application. Auth has been handled using [NextAuth](https://github.com/nextauthjs/next-auth)
+Client side, the application has been built with Nextjs and TypeScript. A user must be logged in to view the application. Auth has been handled using [NextAuth](https://github.com/nextauthjs/next-auth).
 
 ![Login handled using NextAuth](/img/login.png)
 
@@ -10,10 +10,11 @@ Once Logged in the user will be presented with the Common Words page of the appl
 
 ![Commons Words Page](/img/words.png)
 
-The user can navigate between letters of the alphabet to view the different associated words. The masonry layout of the cards has been done using [Masonic](https://github.com/jaredLunde/masonic)
+The user can navigate between letters of the alphabet to view the different associated words. The masonry layout of the cards has been done using [Masonic](https://github.com/jaredLunde/masonic).
 
 ![Commons Words Page 2](/img/words2.png)
 
-Users can search the site for a specific term and results across all pages will be displayed
+Users can search the site for a specific term and results across all pages will be displayed.
 
 ![User Search](/img/search.png)
+
