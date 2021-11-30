@@ -6,10 +6,14 @@ Client side, the application has been built with Nextjs and TypeScript. A user m
 
 ![Login handled using NextAuth](/img/login.png)
 
-Once Logged in the user will be presented with the Common Words page of the application. All styling has been done using [Styled Components](https://github.com/styled-components), and been been designed to reflect the format of the Travel Almanac's online publication.
+Once Logged in the user will be presented with the Common Words page of the application. All styling has been done using [Styled Components](https://github.com/styled-components) and been been designed to reflect the format of the Travel Almanac's [online](https://www.travel-almanac.com/) publication.
 
 ![Commons Words Page](/img/words.png)
 
-The user can navigate between the letters of the alphabet to view the different associated words
+The user can navigate between letters of the alphabet to view the different associated words. The masonry layout of the cards has been done using [Masonic](https://github.com/jaredLunde/masonic)
 
 ![Commons Words Page 2](/img/words2.png)
+
+Users can search the site for a specific term and results across all pages will be displayed
+
+![User Search](search)
