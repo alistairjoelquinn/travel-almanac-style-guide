@@ -18,6 +18,8 @@ Users can [search](https://github.com/alistairjoelquinn/travel-almanac-style-gui
 
 ![User Search](/img/search.png)
 
-Global state management is being managed with the [React Context API](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/context.tsx) and [useReducer](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/reducer.ts) hook. 
+Global state management is being managed with the [React Context API](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/context.tsx) and [useReducer](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/reducer.ts) hook. When the user navigates to a new page, the data for this page is fetched from the CMS and added to global state. 
 
-The CMS has been built with [Sanity.io](https://github.com/sanity-io/sanity) and has a GraphQL API. Client side [data fetching](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/actions.ts) is being done with [Apollo Client](https://github.com/apollographql/apollo-client)
+![Quick Formatting Page](/img/format.png)
+
+The CMS has been built with [Sanity.io](https://github.com/sanity-io/sanity) and has a GraphQL API. Client side [data fetching](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/actions.ts) is being done with [Apollo Client](https://github.com/apollographql/apollo-client).
