@@ -18,7 +18,7 @@ Users can [search](https://github.com/alistairjoelquinn/travel-almanac-style-gui
 
 ![User Search](/img/search.png)
 
-Global state management is being managed with the [React Context API](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/context.tsx) and [useReducer](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/reducer.ts) hook. When the user navigates to a new page, the data for this page is fetched from the CMS and added to global state. 
+Global state management is being managed with the [React Context API](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/context.tsx) and [useReducer](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/context/reducer.ts) hook. When the user navigates to a new page, additional data for this page is fetched from the CMS and added to global state. 
 
 ![Quick Formatting Page](/img/format.png)
 
