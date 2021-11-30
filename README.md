@@ -16,4 +16,4 @@ The user can navigate between letters of the alphabet to view the different asso
 
 Users can search the site for a specific term and results across all pages will be displayed
 
-![User Search](search)
+![User Search](/img/search.png)
