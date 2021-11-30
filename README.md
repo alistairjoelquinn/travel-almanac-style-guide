@@ -6,7 +6,7 @@ Client side, the application has been built with Nextjs and TypeScript. A user m
 
 ![Login handled using NextAuth](/img/login.png)
 
-Once Logged in the user will be presented with the Common Words page of the application. All styling has been done using [Styled Components](https://github.com/styled-components) and been been designed to reflect the format of the Travel Almanac's [online](https://www.travel-almanac.com/) publication.
+Once logged in the user will be presented with the Common Words page of the application. All styling has been done using [Styled Components](https://github.com/styled-components/styled-components) and has been designed to reflect the format of the Travel Almanac's [online](https://www.travel-almanac.com/) publication.
 
 ![Commons Words Page](/img/words.png)
 
