@@ -71,7 +71,7 @@ const ToneOfVoiceStyles = styled.div`
     }
 `;
 
-const ToneOfVoice = () => {
+const Style = () => {
     const { data } = useQuery(GET_TONE_OF_VOICE_QUERY);
     const items = data && [...data.allToneOfVoice];
     return (
@@ -87,4 +87,4 @@ const ToneOfVoice = () => {
     );
 };
 
-export default ToneOfVoice;
+export default Style;

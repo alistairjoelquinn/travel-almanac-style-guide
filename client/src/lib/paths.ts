@@ -20,7 +20,7 @@ export default [
         path: '/quick-formatting',
     },
     {
-        name: 'Tone of Voice & Writing Tips',
-        path: '/tone-of-voice',
+        name: `TTA's Style & Writing Tips`,
+        path: '/style',
     },
 ];
