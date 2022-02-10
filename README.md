@@ -8,11 +8,11 @@ Client side, the application has been built with Nextjs and TypeScript. A user m
 
 Once logged in the user will be presented with the Common Words page of the application. All styling has been done using [Styled Components](https://github.com/styled-components/styled-components) and has been designed to reflect the format of the Travel Almanac's [online](https://www.travel-almanac.com/) publication.
 
-![Commons Words Page](https://res.cloudinary.com/dtirfwiy8/image/upload/v1644507668/the-ta/words_ht3lv0.png)
+![Commons Words Page 2](https://res.cloudinary.com/dtirfwiy8/image/upload/v1644507668/the-ta/words2_d7rvvy.png)
 
 The user can navigate between letters of the alphabet to view the different associated words. The masonry layout of the cards has been done using [Masonic](https://github.com/jaredLunde/masonic).
 
-![Commons Words Page 2](https://res.cloudinary.com/dtirfwiy8/image/upload/v1644507668/the-ta/words2_d7rvvy.png)
+![Commons Words Page](https://res.cloudinary.com/dtirfwiy8/image/upload/v1644507668/the-ta/words_ht3lv0.png)
 
 Users can [search](https://github.com/alistairjoelquinn/travel-almanac-style-guide/blob/main/client/src/components/SearchResults.tsx) the site for a specific term and results across all pages will be displayed with the matching search term highlighted.
 
