@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react';
-import { StateProvider } from 'components/context/context';
+import StateProvider from 'components/context/context';
 import Page from 'components/Page';
 import 'components/styles/font.css';
 import GlobalStyles from 'components/styles/GlobalStyles';
