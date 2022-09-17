@@ -5,14 +5,7 @@ import { Words } from '@/models/content';
 import { Masonry } from 'masonic';
 import { useEffect } from 'react';
 
-export const BasicCard = ({ data }: { data: Words }) => (
-  <GridItemStyles key={data.title}>
-    <dt>{data.title}</dt>
-    {data.value && <dd>{data.value}</dd>}
-  </GridItemStyles>
-);
-
-const Punctuation = () => {
+export default function Punctuation() {
   const dispatch = Dispatch();
   const { punctuation } = State();
 
@@ -27,6 +20,11 @@ const Punctuation = () => {
       <Masonry items={punctuation} columnWidth={300} render={BasicCard} />
     </PageStyles>
   );
-};
+}
 
-export default Punctuation;
+export const BasicCard = ({ data }: { data: Words }) => (
+  <GridItemStyles key={data.title}>
+    <dt>{data.title}</dt>
+    {data.value && <dd>{data.value}</dd>}
+  </GridItemStyles>
+);
