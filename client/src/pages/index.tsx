@@ -1,9 +1,8 @@
-import { addCommonWordsToState } from '@/components/context/actions';
-import { Dispatch, State } from '@/components/context/context';
-import { Words } from '@/components/context/models';
-import alphabet from '@/lib/alphabet';
-import { BasicCard } from '@/pages/punctuation';
 import { useWindowSize } from '@react-hook/window-size';
+import { addCommonWordsToState } from 'components/context/actions';
+import { Dispatch, State } from 'components/context/context';
+import { Words } from 'components/context/models';
+import alphabet from 'lib/alphabet';
 import {
   useContainerPosition,
   useMasonry,
@@ -12,6 +11,7 @@ import {
   useScroller,
 } from 'masonic';
 import Head from 'next/head';
+import { BasicCard } from 'pages/punctuation';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 

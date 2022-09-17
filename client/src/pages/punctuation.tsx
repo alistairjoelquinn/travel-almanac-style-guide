@@ -1,8 +1,8 @@
-import { addPunctuationToState } from '@/components/context/actions';
-import { Dispatch, State } from '@/components/context/context';
-import { GridItemStyles, PageStyles } from '@/components/styles/CardPageStyles';
-import { Words } from '@/models/content';
+import { addPunctuationToState } from 'components/context/actions';
+import { Dispatch, State } from 'components/context/context';
+import { GridItemStyles, PageStyles } from 'components/styles/CardPageStyles';
 import { Masonry } from 'masonic';
+import { Words } from 'models/content';
 import { useEffect } from 'react';
 
 export default function Punctuation() {

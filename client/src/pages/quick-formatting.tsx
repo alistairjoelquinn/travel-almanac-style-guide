@@ -1,26 +1,23 @@
+import { addQuickFormattingToState } from 'components/context/actions';
+import { Dispatch, State } from 'components/context/context';
+import { PageStyles } from 'components/styles/CardPageStyles';
+import { Masonry } from 'masonic';
+import { BasicCard } from 'pages/punctuation';
 import { useEffect } from 'react';
 
-import { addQuickFormattingToState } from '@/components/context/actions';
-import { Dispatch, State } from '@/components/context/context';
-import { PageStyles } from '@/components/styles/CardPageStyles';
-import { Masonry } from 'masonic';
-import { BasicCard } from './punctuation';
+export default function QuickFormatting() {
+  const dispatch = Dispatch();
+  const { quickFormatting } = State();
 
-const QuickFormatting = () => {
-    const dispatch = Dispatch();
-    const { quickFormatting } = State();
+  useEffect(() => {
+    if (dispatch) {
+      addQuickFormattingToState(dispatch);
+    }
+  }, [dispatch]);
 
-    useEffect(() => {
-        if (dispatch) {
-            addQuickFormattingToState(dispatch);
-        }
-    }, [dispatch]);
-
-    return (
-        <PageStyles>
-            <Masonry items={quickFormatting} columnWidth={300} render={BasicCard} />
-        </PageStyles>
-    );
-};
-
-export default QuickFormatting;
+  return (
+    <PageStyles>
+      <Masonry items={quickFormatting} columnWidth={300} render={BasicCard} />
+    </PageStyles>
+  );
+}
