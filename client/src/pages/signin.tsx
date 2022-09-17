@@ -59,6 +59,7 @@ const LoginStyles = styled.section`
       background-color: #fff;
       border-radius: 1rem;
       border: 1px solid black;
+      cursor: pointer;
       height: 3rem;
       width: 6rem;
       &:hover {
