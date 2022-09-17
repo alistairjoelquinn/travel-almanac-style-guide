@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
-
 import { addDatesNumbersToState } from '@/components/context/actions';
 import { Dispatch, State } from '@/components/context/context';
 import { GridItemStyles, PageStyles } from '@/components/styles/CardPageStyles';
-import { Masonry } from 'masonic';
 import { BulletPoints } from '@/models/content';
+import { Masonry } from 'masonic';
+import { useEffect } from 'react';
 
 const DottedCard = ({ data }: { data: BulletPoints }) => (
     <GridItemStyles key={data.title}>

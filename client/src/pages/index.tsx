@@ -1,67 +1,19 @@
-import { useEffect, useState, useRef } from 'react';
-import Head from 'next/head';
-import styled from 'styled-components';
+import { addCommonWordsToState } from '@/components/context/actions';
+import { Dispatch, State } from '@/components/context/context';
+import { Words } from '@/components/context/models';
+import alphabet from '@/lib/alphabet';
+import { BasicCard } from '@/pages/punctuation';
 import { useWindowSize } from '@react-hook/window-size';
 import { useContainerPosition, useMasonry, usePositioner, useResizeObserver, useScroller } from 'masonic';
-
-import { Dispatch, State } from '@/components/context/context';
-import { addCommonWordsToState } from '@/components/context/actions';
-import alphabet from '@/lib/alphabet';
-import { Words } from '@/components/context/models';
-import { BasicCard } from './punctuation';
+import Head from 'next/head';
+import { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 
 interface StyleProps {
     indexVal: number | string;
 }
 
-const LetterSelectStyles = styled.div<StyleProps>`
-    width: 100%;
-    height: 4rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1rem;
-    padding: 0 1rem;
-    span {
-        height: 2.5rem;
-        font-size: 2.5rem;
-        cursor: pointer;
-        background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 2px no-repeat;
-        transition: 0.5s;
-        &:nth-child(${(p) => p.indexVal}) {
-            --d: 100%;
-        }
-    }
-    @media (max-width: 700px) {
-        width: 15%;
-        height: auto;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 10px;
-        margin-left: 10px;
-        span {
-            margin-bottom: 15px;
-        }
-    }
-`;
-
-const CommonWordsContainerStyles = styled.main`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    @media (max-width: 700px) {
-        flex-direction: row;
-    }
-`;
-
-const CommonWordsStyles = styled.div`
-    padding: 0 2rem;
-    @media (max-width: 700px) {
-        width: 85%;
-    }
-`;
-
-const Home = () => {
+export function Home() {
     const [letter, setLetter] = useState(['A', 1]);
     const [words, setWords] = useState<Words[]>([]);
     const dispatch = Dispatch();
@@ -114,6 +66,51 @@ const Home = () => {
             </CommonWordsContainerStyles>
         </>
     );
-};
+}
 
-export default Home;
+const LetterSelectStyles = styled.div<StyleProps>`
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    span {
+        height: 2.5rem;
+        font-size: 2.5rem;
+        cursor: pointer;
+        background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 2px no-repeat;
+        transition: 0.5s;
+        &:nth-child(${(p) => p.indexVal}) {
+            --d: 100%;
+        }
+    }
+    @media (max-width: 700px) {
+        width: 15%;
+        height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 10px;
+        margin-left: 10px;
+        span {
+            margin-bottom: 15px;
+        }
+    }
+`;
+
+const CommonWordsContainerStyles = styled.main`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @media (max-width: 700px) {
+        flex-direction: row;
+    }
+`;
+
+const CommonWordsStyles = styled.div`
+    padding: 0 2rem;
+    @media (max-width: 700px) {
+        width: 85%;
+    }
+`;

@@ -1,7 +1,6 @@
-import { useState } from 'react';
-
-import Header from '@/components/Header';
 import { State } from '@/components/context/context';
+import Header from '@/components/Header';
+import { useState } from 'react';
 import SearchContainer from './SearchContainer';
 
 const mainStyles = {
