@@ -1,15 +1,15 @@
 export interface Words {
-    title: string;
-    value: string;
+  title: string;
+  value: string;
 }
 
 export interface BulletPoints {
-    title: string;
-    value: string[];
+  title: string;
+  value: string[];
 }
 
 export interface HTMLToneOfVoiceTemplate {
-    _id: string;
-    value: string;
-    order: number;
+  _id: string;
+  value: string;
+  order: number;
 }
