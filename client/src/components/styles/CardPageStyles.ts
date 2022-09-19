@@ -2,6 +2,15 @@ import styled from 'styled-components';
 
 export const PageStyles = styled.div`
   padding: 0 2rem;
+  animation: fade 1.5s ease-in-out;
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 interface GridProps {
