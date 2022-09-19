@@ -12,6 +12,11 @@ import toneOfVoice from './tone-of-voice';
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    commonWords, punctuation, datesNumbers, bestPractise, quickFormatting, toneOfVoice
+    commonWords,
+    punctuation,
+    datesNumbers,
+    bestPractise,
+    quickFormatting,
+    toneOfVoice,
   ]),
 });
