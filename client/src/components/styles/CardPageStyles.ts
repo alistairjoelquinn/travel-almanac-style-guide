@@ -1,4 +1,3 @@
-import { animated } from 'react-spring';
 import styled from 'styled-components';
 
 export const PageStyles = styled.div`
@@ -25,7 +24,7 @@ export const GridStyles = styled.div<GridProps>`
   }
 `;
 
-export const GridItemStyles = styled(animated.dl)`
+export const GridItemStyles = styled.dl`
   border: 1px solid black;
   border-radius: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
