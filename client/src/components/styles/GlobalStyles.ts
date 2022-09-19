@@ -14,6 +14,14 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         margin: 0;
     }
+    @keyframes fade {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
 `;
 
 export default GlobalStyles;

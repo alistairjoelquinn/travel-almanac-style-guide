@@ -55,6 +55,7 @@ const ToneItemStyles = styled.div`
 
 const ToneOfVoiceStyles = styled.div`
   padding: 1vh 5vw;
+  animation: fade 1.5s ease-in-out;
   h3 {
     margin: 1rem 0;
     font-weight: bold;

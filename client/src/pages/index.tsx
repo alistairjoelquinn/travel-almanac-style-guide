@@ -116,6 +116,7 @@ const CommonWordsContainerStyles = styled.main`
   display: flex;
   flex-direction: column;
   width: 100%;
+  animation: fade 1.5s ease-in-out;
   @media (max-width: 700px) {
     flex-direction: row;
   }
