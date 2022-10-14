@@ -13,20 +13,20 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const App = (props: AppProps) => (
-  <>
-    <GlobalStyles />
-    <Typography />
-    <Provider session={props.pageProps.session}>
-      <ApolloProvider client={client}>
-        <StateProvider>
-          <Page>
-            <props.Component {...props.pageProps} />
-          </Page>
-        </StateProvider>
-      </ApolloProvider>
-    </Provider>
-  </>
-);
-
-export default App;
+export default function App(props: AppProps) {
+  return (
+    <>
+      <GlobalStyles />
+      <Typography />
+      <Provider session={props.pageProps.session}>
+        <ApolloProvider client={client}>
+          <StateProvider>
+            <Page>
+              <props.Component {...props.pageProps} />
+            </Page>
+          </StateProvider>
+        </ApolloProvider>
+      </Provider>
+    </>
+  );
+}
