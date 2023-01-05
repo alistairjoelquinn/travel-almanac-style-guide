@@ -22,7 +22,7 @@ export default function DatesNumbers() {
   );
 }
 
-const DottedCard = ({ data }: { data: BulletPoints }) => (
+export const DottedCard = ({ data }: { data: BulletPoints }) => (
   <GridItemStyles key={data.title}>
     <dt>{data.title}</dt>
     <ul>

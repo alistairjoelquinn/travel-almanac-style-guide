@@ -17,7 +17,7 @@ export interface InitialState {
   punctuation: StandardItem[];
   datesNumbers: ArrayItem[];
   bestPractice: ArrayItem[];
-  quickFormatting: StandardItem[];
+  quickFormatting: ArrayItem[];
   toneOfVoice: StandardItem[] | ArrayItem[];
   searching: boolean;
   searchTerm: string;
