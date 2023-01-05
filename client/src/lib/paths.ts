@@ -20,8 +20,8 @@ export default [
     path: '/quick-formatting',
   },
   {
-    name: 'Proof Reading',
-    path: '/proof-reading',
+    name: 'Proofreading',
+    path: '/proofreading',
   },
   {
     name: `TTA's Style & Writing Tips`,

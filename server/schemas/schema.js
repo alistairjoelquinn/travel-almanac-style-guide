@@ -7,6 +7,7 @@ import punctuation from './punctuation';
 import datesNumbers from './dates-numbers';
 import bestPractise from './best-practise';
 import quickFormatting from './quick-formatting';
+import proofReading from './proofreading';
 import toneOfVoice from './tone-of-voice';
 
 export default createSchema({
@@ -17,6 +18,7 @@ export default createSchema({
     datesNumbers,
     bestPractise,
     quickFormatting,
+    proofReading,
     toneOfVoice,
   ]),
 });
