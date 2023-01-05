@@ -5,7 +5,8 @@ import { HTMLGrid, HTMLItemStyles, HTMLStyles } from './style';
 
 export default function ProofReading() {
   const { data } = useQuery(GET_PROOF_READING_QUERY);
-  const items = data && [...data.allProofReading];
+  console.log('data: ', data);
+  const items = data && [...data.allProofreading];
   return (
     <HTMLStyles>
       <HTMLGrid>
@@ -21,7 +22,7 @@ export default function ProofReading() {
 
 const GET_PROOF_READING_QUERY = gql`
   query {
-    allProofReading {
+    allProofreading {
       _id
       value
       order
