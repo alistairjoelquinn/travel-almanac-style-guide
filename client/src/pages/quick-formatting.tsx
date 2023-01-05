@@ -17,7 +17,7 @@ export default function QuickFormatting() {
 
   return (
     <PageStyles>
-      <Masonry items={quickFormatting} columnWidth={300} render={DottedCard} />
+      <Masonry items={quickFormatting} columnWidth={400} render={DottedCard} />
     </PageStyles>
   );
 }
