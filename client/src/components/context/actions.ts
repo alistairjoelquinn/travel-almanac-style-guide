@@ -116,8 +116,6 @@ export const addQuickFormattingToState = async (
     `,
   });
 
-  console.log('allQuickFormatting: ', allQuickFormatting);
-
   dispatch({
     type: 'ADD_QUICK_FORMATTING',
     payload: {

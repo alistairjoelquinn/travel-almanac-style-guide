@@ -5,7 +5,6 @@ import { HTMLGrid, HTMLItemStyles, HTMLStyles } from './style';
 
 export default function ProofReading() {
   const { data } = useQuery(GET_PROOF_READING_QUERY);
-  console.log('data: ', data);
   const items = data && [...data.allProofreading];
   return (
     <HTMLStyles>
