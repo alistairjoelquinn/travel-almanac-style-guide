@@ -2,7 +2,7 @@ import { BsTrophy as icon } from 'react-icons/bs';
 
 export default {
   name: 'best-practise',
-  title: 'General Best Practise',
+  title: 'General Best Practice',
   type: 'document',
   icon,
   fields: [
