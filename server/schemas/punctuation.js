@@ -2,7 +2,7 @@ import { BsDot as icon } from 'react-icons/bs';
 
 export default {
   name: 'punctuation',
-  title: 'Punctuation',
+  title: 'Grammar & Punctuation',
   type: 'document',
   icon,
   fields: [

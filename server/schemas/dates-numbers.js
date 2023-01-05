@@ -2,7 +2,7 @@ import { ImListNumbered as icon } from 'react-icons/im';
 
 export default {
   name: 'dates-numbers',
-  title: 'Dates & Numbers',
+  title: 'Dates, Time & Numbers',
   type: 'document',
   icon,
   fields: [

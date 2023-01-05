@@ -2,7 +2,7 @@ import { AiFillFormatPainter as icon } from 'react-icons/ai';
 
 export default {
   name: 'quick-formatting',
-  title: 'Quick Formatting',
+  title: 'Formatting',
   type: 'document',
   icon,
   fields: [

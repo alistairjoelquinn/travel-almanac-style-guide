@@ -2,7 +2,7 @@ import { FcVoicePresentation as icon } from 'react-icons/fc';
 
 export default {
   name: 'tone-of-voice',
-  title: 'Tone Of Voice',
+  title: 'Style Tips',
   type: 'document',
   icon,
   fields: [
