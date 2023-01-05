@@ -8,7 +8,7 @@ export interface BulletPoints {
   value: string[];
 }
 
-export interface HTMLToneOfVoiceTemplate {
+export interface HTMLTemplate {
   _id: string;
   value: string;
   order: number;

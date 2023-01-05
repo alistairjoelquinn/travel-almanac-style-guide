@@ -1,24 +1,21 @@
 import { gql, useQuery } from '@apollo/client';
 import parse from 'html-react-parser';
-import { HTMLToneOfVoiceTemplate } from 'models/content';
+import { HTMLTemplate } from 'models/content';
 import styled from 'styled-components';
 
 export default function Style() {
   const { data } = useQuery(GET_TONE_OF_VOICE_QUERY);
   const items = data && [...data.allToneOfVoice];
   return (
-    <ToneOfVoiceStyles>
-      <ToneGrid>
+    <HTMLStyles>
+      <HTMLGrid>
         {items
-          ?.sort(
-            (a: HTMLToneOfVoiceTemplate, b: HTMLToneOfVoiceTemplate) =>
-              a.order - b.order
-          )
-          .map((item: HTMLToneOfVoiceTemplate) => (
-            <ToneItemStyles key={item._id}>{parse(item.value)}</ToneItemStyles>
+          ?.sort((a: HTMLTemplate, b: HTMLTemplate) => a.order - b.order)
+          .map((item: HTMLTemplate) => (
+            <HTMLItemStyles key={item._id}>{parse(item.value)}</HTMLItemStyles>
           ))}
-      </ToneGrid>
-    </ToneOfVoiceStyles>
+      </HTMLGrid>
+    </HTMLStyles>
   );
 }
 
@@ -32,12 +29,12 @@ const GET_TONE_OF_VOICE_QUERY = gql`
   }
 `;
 
-const ToneGrid = styled.div`
+export const HTMLGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
 `;
 
-const ToneItemStyles = styled.div`
+export const HTMLItemStyles = styled.div`
   border: 1px solid black;
   border-radius: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -53,7 +50,7 @@ const ToneItemStyles = styled.div`
   }
 `;
 
-const ToneOfVoiceStyles = styled.div`
+export const HTMLStyles = styled.div`
   padding: 1vh 5vw;
   animation: fade 1.5s ease-in-out;
   h3 {
