@@ -4,7 +4,7 @@ export default [
     path: '/',
   },
   {
-    name: 'Punctuation',
+    name: 'Grammar & Punctuation',
     path: '/punctuation',
   },
   {
@@ -16,7 +16,7 @@ export default [
     path: '/best-practice',
   },
   {
-    name: 'Quick Formatting Guide',
+    name: 'Formatting Tips',
     path: '/quick-formatting',
   },
   {

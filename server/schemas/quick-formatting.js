@@ -10,13 +10,15 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      description: 'What is the title?',
+      description: 'What is the item?',
     },
     {
       name: 'value',
       title: 'Description',
-      type: 'string',
-      description: 'A more detailed description of why it is included.',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description:
+        'Each input should be a separate example clarifying why the item is included.',
     },
   ],
 };
