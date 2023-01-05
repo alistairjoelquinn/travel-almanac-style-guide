@@ -3,6 +3,7 @@ import { Dispatch, State } from 'components/context/context';
 import { GridItemStyles, PageStyles } from 'components/styles/CardPageStyles';
 import { Masonry } from 'masonic';
 import { BulletPoints } from 'models/content';
+import parse from 'html-react-parser';
 import { useEffect } from 'react';
 
 export default function DatesNumbers() {
@@ -27,7 +28,7 @@ export const DottedCard = ({ data }: { data: BulletPoints }) => (
     <dt>{data.title}</dt>
     <ul>
       {data.value.map((val: string) => (
-        <li key={val}>{val}</li>
+        <li key={val}>{parse(val)}</li>
       ))}
     </ul>
   </GridItemStyles>
