@@ -116,7 +116,7 @@ const NavStyles = styled.nav<NavProps>`
       }
     }
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
   }
 `;
