@@ -1,6 +1,7 @@
 import { addBestPracticeToState } from 'components/context/actions';
 import { Dispatch, State } from 'components/context/context';
 import { GridItemStyles, PageStyles } from 'components/styles/CardPageStyles';
+import parse from 'html-react-parser';
 import { Masonry } from 'masonic';
 import { BulletPoints } from 'models/content';
 import { useEffect } from 'react';
@@ -28,7 +29,7 @@ const LargeCard = ({ data }: { data: BulletPoints }) => (
     <div>
       {data.value.map((val: string) => (
         <dd key={val} className="paragraphs">
-          {val}
+          {parse(val)}
         </dd>
       ))}
     </div>
