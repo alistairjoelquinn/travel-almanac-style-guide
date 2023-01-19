@@ -1,4 +1,5 @@
 import { State } from 'components/context/context';
+import parse from 'html-react-parser';
 import {
   GridItemStyles,
   GridStyles,
@@ -44,7 +45,7 @@ export default function SearchResults() {
                   : 'transparent',
             }}
           >
-            {item}
+            {parse(item)}
           </span>
         ));
     }
@@ -66,10 +67,10 @@ export default function SearchResults() {
                             : 'transparent',
                       }}
                     >
-                      {innerItem}
+                      {parse(innerItem)}
                     </span>
                   ))
-              : item}
+              : parse(item)}
           </li>
         ))}
       </ul>
