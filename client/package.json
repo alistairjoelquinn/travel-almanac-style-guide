@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "author": "Alistair Quinn",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
